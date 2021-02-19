@@ -26,6 +26,8 @@ if (!window.console.info) {
 	                }
 	            }
             }
+        } else {
+        	exampleInit()
         }
 
         $('#treelist').show();
@@ -348,19 +350,21 @@ if (!window.console.info) {
 			anchor = "010-disp-basic";
 		}
 		anchor=anchor.replace(/#/ig,""); 
-        for (var i = 0; i < exampleList.length; i++) {
-        	for(var j = 0;j<exampleList[i].children.length; j++)
-        	{
-        		if(exampleList[i].children[j].filename==anchor)
-        		{
-	                easytree.toggleNodes(exampleList[i]);
-	                easytree.activateNode(exampleList[i].children[j].id);
-	                selectNode=exampleList[i].children[j];
-	                exampleActivate();
-	                return;
-        		}
-        	}
-        }
+		if (exampleList) {
+	        for (var i = 0; i < exampleList.length; i++) {
+	        	for(var j = 0;j<exampleList[i].children.length; j++)
+	        	{
+	        		if(exampleList[i].children[j].filename==anchor)
+	        		{
+		                easytree.toggleNodes(exampleList[i]);
+		                easytree.activateNode(exampleList[i].children[j].id);
+		                selectNode=exampleList[i].children[j];
+		                exampleActivate();
+		                return;
+	        		}
+	        	}
+	        }
+	    }
         
 	}
 	
@@ -416,8 +420,10 @@ if (!window.console.info) {
 		exampleActivate();
 	}
 	
-	document.getElementById("down").onclick = function() {
-		window.open( examplePath+selectNode.filename+"/"+selectNode.zip);
+	if (document.getElementById("down")) {
+		document.getElementById("down").onclick = function() {
+			window.open( examplePath+selectNode.filename+"/"+selectNode.zip);
+		}
 	}
 	
 	document.getElementById("execute").onclick = function() {

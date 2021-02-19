@@ -41,8 +41,8 @@
         var _settings = {
             allowActivate: true,
             data: null,
-            dataUrl: null,
-            dataUrlJson: null,
+            dataUrl: "/cn/example/tree.json",
+            dataUrlJson: "",
             disableIcons: false,
             enableDnd: false, // drag 'n' drop
             ordering: null, // ordered || orderedFolder
@@ -80,7 +80,7 @@
 
             var json = '';
             if (_settings.dataUrl) {
-                ajaxService(_settings.dataUrl, _settings.dataUrlJson, function (data) {
+                ajaxServiceGet(_settings.dataUrl, _settings.dataUrlJson, function (data) {
                     json = convertInputDataToJson(data);
                     if (!json) {
                         alert("EasyTree: Invalid data!");
@@ -968,6 +968,18 @@
             $.ajax({
                 url: actionUrl,
                 type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: json,
+                success: callBack,
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert("Error: " + jqXHR.responseText);
+                }
+            });
+        }
+        function ajaxServiceGet(actionUrl, json, callBack) {
+            $.ajax({
+                url: actionUrl,
+                type: "GET",
                 contentType: "application/json; charset=utf-8",
                 data: json,
                 success: callBack,
