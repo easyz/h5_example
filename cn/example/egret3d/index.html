@@ -1,0 +1,215 @@
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width"> <title>白鹭开发者中心 - 教学示例 </title> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit" /> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp" /> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link  href="/en/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="icon" /> <link  href="/en/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="shortcut icon" /> <!-- change to bootstrap3 --> <link href="/en/statics/simpleboot/bootstrap3/css/bootstrap.min.css?v=20160229" rel="stylesheet" /> <!-- change theme to bootstrap3 --> <link href="/en/statics/simpleboot/themes_bootstrap3/cmf/theme.min.css?v=20160812" rel="stylesheet" id="g-css-theme" /> <link href="/en/statics/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> <link href="/en/tpl/simplebootx/Public/css/style.css?v=20160823" rel="stylesheet" /> <link href="/en/tpl/simplebootx/Public/css/header.css?v=20160830" rel="stylesheet" /> <style>  .Conversion{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -24px;}
+  .DB{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -48px;}
+  .Engine2D{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -24px;}
+  .Engine3D{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -0px;}
+  .extension{position:absolute;top:13px;left:25px;
+  width:24px;height:23px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -72px;}
+  .Feather{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -48px;}
+  .Inspector{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -72px;}
+  .Lakeshore{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -0px;}
+  .Merger{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -72px;}
+  .platform{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -48px;}
+  .Depot{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -24px;}
+  .Wing{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -0px;}
+  .Native{position:absolute;top:13px;left:25px;
+    width:25px;height:25px;background: url("https://cdn.www.egret.com/official/new-egret/img/product-icon-native-25.jpg");}
+  .closeButton{width:24px;height:24px;background: url("/en/statics/images/icon/closebutton.png") no-repeat -0px -0px;background-size:cover;}
+  .microclient{position:absolute;top:13px;left:25px;
+		width:25px;height:25px;background: url("http://cdn.dev.egret.com/simpleboot/public/microclient.jpg");}
+</style> <link href="/en/tpl/simplebootx/Public/simpleboot/examples/css/egret3d.css?v=20161020" rel="stylesheet" type="text/css" /> <style>
+            #treelist li>span.easytree-exp-c>.easytree-expander,#treelist li>span.easytree-exp-cl>.easytree-expander {
+                background-image:url("/en/statics/images/icon/arrow-down.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #treelist li>span.easytree-exp-e>.easytree-expander {
+                background-image:url("/en/statics/images/icon/arrow-up.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style> </head> <body class="playground"  style="overflow:hidden;overflow-y:hidden;overflow-x:hidden"> <div class="container-fluid  navbarbg"> <div class="container"> <nav class="navbar navbar-default" role="navigation"> <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="/en"><img id="navlogo" src="" class="img-responsive visible-lg-block visible-sm-block visible-xs-block" /></a> </div> <div class="collapse navbar-collapse" id="main-menu"> <!-- 菜单栏 --> <ul id=""  class="navbar-nav navbar-nav-ul-padding-top"><li   class='productBox'   id= 'menu-item-2'><a href='/en/' target=''>Home</a></li><li   class='productBox'   id= 'menu-item-22'><a href='javascript:;' target=''>Document</a></li><li   class='productBox'   id= 'menu-item-4'><a href='/en/apidoc/' target=''>API</a></li><li   class='productBox'   id= 'menu-item-26'><a href='/en/list/example/id/13' target=''>Demo</a></li><li   class='productBox'   id= 'menu-item-27'><a href='/en/example/egret2d/index.html#010-disp-basic' target=''>Sample</a></li><li   class='productBox'   id= 'menu-item-28'><a href='https://github.com/egret-labs/egret-core/issues' target=''>Support</a></li></ul> <!-- end --> <li class="switch-button pull-right media-clear-pull"> <a href="http://developer.egret.com/cn/" class="small">
+	        		Chinese / English
+	        		</a> </li> <!-- login out --> <li class="logintBox dropdown pull-right media-clear-pull" id="menu-user-login"> <!-- start of login --> <a href="javascript:void(0);" class="navbar-login"> <img src="/en/tpl/simplebootx/Public/simpleboot/index/img/login.png" alt="" class="img-responsive" /> </a> <ul class="subnav subnav-login flex" style="display:none;"> <li class="logintBox"> <a href="#" id='u-log'>login</a> </li> <li class="logintBox"> <a href="#" id='u-reg' target="_blank">register</a> </li> </ul> <!-- end of login --> </li> <li class="logintOutBox dropdown pull-right media-clear-pull" id="menu-user-info" style="display: none"> <!-- start of login success --> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/en/tpl/simplebootx//Public/images/headicon.png" class="headicon" id="main-menu-user-headicon"/> <span  class="user-nicename" id="main-menu-user-nicename" style="display: none"></span> </a> <ul class="subnav subnav-login-out flex" style="display:none;"> <li class="logintOutBox"><a href="/en/user/book/index"><i class="fa fa-user"></i> &nbsp;个人中心</a></li> <li class="logintOutBox"><a href="/en/user/index/logout2"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li> </ul> <!-- end of login success --> </li> <!-- end of login out --> <ul class="navbar-nav navbar-nav-ul-padding-top pull-right media-clear-pull"> <li class="navbar-search"> <!-- start search --> <form class="form-inline navbar-form pull-left" method="get" id="srarchForm" action="/en/portal/search/index"> <input class="form-control" id="keyword" name="keyword" value="" type="text" placeholder="search..." /> <input type="hidden" name="page" value=1> <input type="hidden" class="" id='keytype' name="type" value=""/> </form> <!-- end of search --> </li> </ul> </div> </nav> </div> </div> <script>
+    var goUrl = encodeURI(window.location.href);
+    document.getElementById("u-log").href = "/en/user/login/index?goUrl=" + goUrl;
+    document.getElementById("u-reg").href = "/en/user/register/index";
+</script> <div id="modal-content"> </div> <div id="js-fullscreen"> <div class="left-bar"> <div class="search-item" > <input type="text" placeholder="输入关键字" id="search"> </div> <div style="text-align: center;margin-bottom:10px;"> <a href="/en/example/egret2d/index.html">2D</a> <!-- / <a href="/en/example/egret3d/index.html">3D</a> --> </div> <div id="treelist"></div> <div id="searchResult"></div> </div> <div class="demo-info"> <div class="info-title"> </div> <a class="pull-right btn-qrcode" data-toggle="modal" data-target="#qrModal" style="background-image:url(http://cdn.dev.egret.com/simpleboot/example/qr.svg);">
+                    二维码
+                </a> </div> <div class="game-container"> <iframe id="demoiframe" allowFullScreen="ture" allowTransparency="true" scrolling="no" src="" style="width:100%;height:100%;border:0;margin:0 0;padding:0 0;"></iframe> </div> </div> <!-- qrModal --> <div class="modal fade" id="qrModal" tabindex="-1" role="dialog" aria-labelledby="qrModalLabel" aria-hidden="true"> <div class="modal-dialog"> <div id="qrcode"> </div> </div> </div> <script type="text/javascript">
+//全局变量
+    var GV = {
+        DIMAUB: "/en/",
+        JS_ROOT: "statics/js/",
+        TOKEN: ""
+    };
+</script> <!-- Le javascript
+    ================================================== --> <!-- Placed at the end of the document so the pages load faster --> <!-- change to bootstrap3 --> <script src="/en/statics/js/jquery.min.js"></script> <script src="/en/statics/js/jquery-migrate.min.js"></script> <script src="/en/statics/js/wind.min.js"></script> <!-- change to  bootstrap3 --> <script src="/en/statics/simpleboot/bootstrap3/js/bootstrap.min.js"></script> <script src="/en/statics/js/frontend.min.js?v=20160229"></script> <script>
+    (function(){
+        $("#menu-item-5").removeClass("productBox");
+        $("#menu-item-5").removeClass("dropdown");
+        $("#menu-item-5").addClass("expBox");  
+        $("#menu-item-5").addClass("dropdown");
+    })();
+</script> <script src="/en/tpl/simplebootx/Public/js/nav.min.js?v=20160823"></script> <script>
+    $(function () {
+        $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+        
+        (function ($) {
+            $.fn.totop = function (opt) {
+                var scrolling = false;
+                return this.each(function () {
+                    var $this = $(this);
+                    $(window).scroll(function () {
+                        if (!scrolling) {
+                            var sd = $(window).scrollTop();
+                            if (sd > 100) {
+                                $this.fadeIn();
+                            } else {
+                                $this.fadeOut();
+                            }
+                        }
+                    });
+
+                    $this.click(function () {
+                        scrolling = true;
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 500, function () {
+                            scrolling = false;
+                            $this.fadeOut();
+                        });
+                    });
+                });
+            };
+        })(jQuery);
+
+        $("#backtotop").totop();
+    });
+    
+function setNavLogo(){
+    if(document.body.clientWidth>1270)
+    {
+        $("#navlogo").attr("src", "/en/tpl/simplebootx/Public/images/logo.png");
+    }else{
+        $("#navlogo").attr("src", "/en/tpl/simplebootx/Public/images/logo.png");
+    }
+}
+
+function getLoginInfo(){
+    $.post("/en/user/index/is_login", {}, function (data) {
+        if (data.status == 1)
+        {
+            
+            $("#edn_user_synlogin").attr("src","/en/user/login/edn_user_synlogin");
+            $("#main-menu-user-headicon").attr("src", "http://bbs.egret.com/uc_server/avatar.php?uid=" + data.user.avatar + "&size=middle");
+            $("#main-menu-user-nicename").text(data.user.user_nicename != "" ? data.user.user_nicename : data.user.user_login);
+            if(data.user.user_type==1)
+                $("#menu-user-info .subnav-login-out").prepend("<li class='logintOutBox'><a href=\"/en/admin/index\"><i class='fa fa-user'></i> &nbsp;后台管理</a></li>");
+            $("#menu-user-login").hide();
+            $("#menu-user-info").show();
+
+        }
+        if (data.status == 0) {
+            $("#menu-user-info").hide();
+            $("#menu-user-login").show();
+        }
+
+    });
+}
+
+function checkLogin(){
+    if($("#main-menu-user-nicename").text()!="")
+    {
+        return true;
+    }
+    return false;
+}
+
+$(window).resize(function(){         
+    setNavLogo()
+});
+
+$(window).ready(function(){         
+    getLoginInfo();
+});
+
+;(function() {
+    "use strict";
+    //var index=window.location.href.indexOf("/en/");
+    //var mode=window.location.href.substr(index);
+    //$("#main-menu").find("[href='"+mode+"']").attr("style","color:#FFFFFF");
+    if(window.location.href.indexOf("/en/page/index/id/8")>0)
+    {
+        $("#menu-item-2 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("book")>0)
+    {
+        $("#menu-item-19 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("docs")>0)
+    {
+        $("#menu-item-3 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("apidoc")>0)
+    {
+        $("#menu-item-4 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("video")>0)
+    {
+        $("#menu-item-6 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("/en/page/index/id/54")>0)
+    {
+        $("#menu-item-8 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("example")>0)
+    {
+        $("#menu-item-5>a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("activity")>0 || window.location.href.indexOf("Activity")>0)
+    {
+        $("#menu-item-8 a").attr("style","color:#1dafec");
+    }
+    if(window.location.href.indexOf("github")>0)
+    {   
+        $("#menu-item-22 a").attr("style","color:#1dafec");
+    }
+ 
+})();
+
+setNavLogo();
+
+</script> <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e37d06fa1de56304c9d645100ad450ac";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script> <!-- Placed at the end of the document so the pages load faster --> <script src="/en/statics/js/easytree/jquery.easytree.js"></script> <script src="/en/statics/js/easytree/extends/searchtree.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/js/qrcode.min.js"></script> <script>
+            ///路径设置
+            var EXP_SET = {
+                rootPath:"/en/example/page/examples/3d/",
+                configPath:"/en/example/page/examples/3d/tree.json",
+                releasePath:"/bin-release/web/",
+                current:"index",
+                httpHost:"developer.egret.com",
+                cdn:"http://cdn.dev.egret.com/"
+            };
+        </script> <script src="/en/tpl/simplebootx/Public/simpleboot/examples/js/example_egret3d.js"></script> </body> </html>

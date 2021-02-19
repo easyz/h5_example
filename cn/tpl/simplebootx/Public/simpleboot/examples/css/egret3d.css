@@ -1,0 +1,123 @@
+#js-fullscreen {
+	/*左侧出让距离*/
+	padding-left: 212px; 
+}
+#js-fullscreen .left-bar {
+	width: 212px;
+	margin-left: -212px;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    border-right: 1px solid #f0f0f0;
+    z-index: 1020;
+}
+#js-fullscreen  .search-item {
+    text-align: center;
+}
+#js-fullscreen  .search-item input {
+    height: 24px;
+    border-radius: 20px;
+    width: 152px;
+    margin: 20px 0;
+    padding: 0px 15px;
+    font-size: 14px;
+    line-height: 24px;
+}
+#js-fullscreen .left-bar #treelist,
+#searchResult
+{
+    border-right: 0 solid #f0f0f0;
+    border-bottom: 0 solid #f0f0f0;
+    padding-left: 40px;
+    padding-top: 16px;
+    overflow-y: auto;
+}
+#js-fullscreen .left-bar #treelist ul, 
+#js-fullscreen .left-bar #treelist li,
+#searchResult li
+{
+    list-style: none;
+    font-size: 12px;
+    color: #040505;
+    line-height: 30px;
+    overflow-wrap: break-word;
+	cursor: pointer;
+}
+#js-fullscreen .game-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#treelist .easytree-container li .easytree-expander {
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    width: 8px;
+    height: 8px;
+}
+.demo-info {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding-left: 212px;
+    text-align: center;
+    z-index: 10;
+}
+.modal#qrModal {
+    top: 20%;
+}
+#qrModal .modal-dialog{
+    width: 200px;
+}
+.btn-qrcode img {
+    width: 15px;
+    height: 15px;
+}
+.btn-qrcode {
+    font-size: 14px;
+    line-height: 25px;
+    border: 1px solid #d1d1d1;
+    padding: 0 30px 0 45px;
+    border-radius: 15px;
+    background-position: 25% 50%;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    color: #040505;
+    cursor: pointer; 
+    margin-right: 15px;
+    margin-top: -25px;
+    display: inline-block;
+}
+.btn-white {
+    font-size: 14px;
+    line-height: 25px;
+    border: 1px solid #d1d1d1;
+    padding: 0 30px 0 30px;
+    border-radius: 15px;
+    color: #040505;
+    cursor: pointer; 
+    margin-right: 15px;
+    margin-top: -25px;
+    display: inline-block;
+}
+.btn-qrcode:hover,.btn-white:hover {
+    color:#040505;
+}
+.info-title {
+    margin-top: 25px;
+    font-size: 16px;
+}
+#treelist>ul {
+    margin: 0 0;
+}
+.color-white {
+    color:#fff !important;
+}
+.color-black {
+    color: #333 !important;
+}
+.easytree-active {
+	color:#079bf6;
+}
+
