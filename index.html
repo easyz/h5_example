@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)http://developer.egret.com/cn/example/egret2d/index.html#010-disp-basic -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width">
+		<title>白鹭开发者中心 - 教学示例 </title>
+    	
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!-- Set render engine for 360 browser -->
+<meta name="renderer" content="webkit">
+<!-- No Baidu Siteapp-->
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<!-- HTML5 shim for IE8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <![endif]-->
+<link href="http://developer.egret.com/cn/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="icon">
+<link href="http://developer.egret.com/cn/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+<!-- change to bootstrap3 -->
+<link href="./files/bootstrap.min.css" rel="stylesheet">
+<!-- change theme to bootstrap3 -->
+<link href="./files/theme.min.css" rel="stylesheet" id="g-css-theme">
+<link href="./files/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="./files/style.css" rel="stylesheet">
+<link href="./files/header.css" rel="stylesheet">
+<style>
+  .Conversion{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -24px;}
+  .DB{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -48px;}
+  .Engine2D{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -24px;}
+  .Engine3D{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -0px;}
+  .extension{position:absolute;top:13px;left:25px;
+  width:24px;height:23px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -72px;}
+  .Feather{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -48px;}
+  .Inspector{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -72px;}
+  .Lakeshore{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -0px;}
+  .Merger{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -72px;}
+  .platform{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -48px;}
+  .Depot{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -24px;}
+  .Wing{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -0px;}
+  .Native{position:absolute;top:13px;left:25px;
+    width:25px;height:25px;background: url("https://cdn.www.egret.com/official/new-egret/img/product-icon-native-25.jpg");}
+  .closeButton{width:24px;height:24px;background: url("/cn/statics/images/icon/closebutton.png") no-repeat -0px -0px;background-size:cover;}
+  .microclient{position:absolute;top:13px;left:25px;
+		width:25px;height:25px;background: url("http://cdn.dev.egret.com/simpleboot/public/microclient.jpg");}
+
+  .matchvs{position:absolute;top:13px;left:25px;
+    width:25px;height:25px;background: url("/cn/data/upload/simpleboot/public/matchvs.png");}
+</style>
+
+
+		<link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="./files/editor.main.css">
+		<link href="./files/egret3d.css" rel="stylesheet" type="text/css">
+		<style>
+            #treelist li>span.easytree-exp-c>.easytree-expander,
+			#treelist li>span.easytree-exp-cl>.easytree-expander
+			 {
+                background-image:url("/cn/statics/images/icon/arrow-down.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            #treelist li>span.easytree-exp-e>.easytree-expander {
+                background-image:url("/cn/statics/images/icon/arrow-up.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+			.btn-blue {
+				font-size: 14px;
+				line-height: 25px;
+				border: 1px solid #d1d1d1;
+				padding: 0 30px 0 30px;
+				border-radius: 15px;
+				background-color:#079bf6;
+				color: #fff;
+				cursor: pointer;
+				display:inline-block;
+			}
+			.demo-info-2d {
+				padding:30px 0 10px 30px;
+			}
+			.btn-qrcode {
+				margin-top: 0px;
+			}
+			#playground-result{
+
+
+			}
+
+			#playground-result {
+				background-image: url(/cn/data/upload/simpleboot/example/phone16.png);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-origin: border-box;
+				background-size: contain;
+				/* background-clip: content-box; */
+			}
+			#popiframe{
+				border: 0;
+    			outline: 0;
+				position: relative;
+				z-index: 10;
+			}
+			.coderesult {
+				position: relative;
+			}
+			.coderesult .qrpopmodule {
+				position: absolute;
+				top: 0;
+				background-color:rgba( 0,0,0,0.5 );
+				display:none;
+				z-index: 12;
+			}
+			#qrcode img {
+				margin: 50% auto;
+			}
+			.poptitle {
+				/*display: none; */
+				position: absolute;
+				padding: 0 0;
+				margin: 0 0;
+				text-align: center;
+    			color: #fff;
+				z-index: 11;
+			}
+			#execute {
+				margin: 0 4px;
+			}
+			.easytree-active {
+				color:#079bf6;
+			}
+			/**
+			* left z-index: iframe 10 title 11 qrcode 12
+			*/
+        </style>
+	<style type="text/css" media="screen"></style><style type="text/css" media="screen"></style><script async="async" type="text/javascript" src="./files/typescriptMode.js.下载"></script><style type="text/css" media="screen"></style><script src="chrome-extension://oofgjnalpjodkfmfomihdlchiiacnman/injectScripts.min.js"></script><script async="async" type="text/javascript" src="./files/typescriptMode.nls.js.下载"></script><script async="async" type="text/javascript" src="./files/typescriptServices.js.下载"></script><script async="async" type="text/javascript" src="./files/raw.typescriptServices.js.下载"></script><style id="debugshowstyle">.monaco-editor .redsquiggly {background: url("Script/vs/editor/browser/widget/media/red-squiggly.svg") repeat-x bottom left;}.decorationsOverviewRuler{display:block;}</style></head>
+
+	<body class="playground" style="overflow:hidden;overflow-y:hidden;overflow-x:hidden">
+		<div style="margin:0 auto;width:0px;height:0px;overflow:hidden;">
+			<img src="./files/edn5120.png" width="700">
+		</div>
+		<div class="container-fluid  navbarbg">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="http://developer.egret.com/cn"><img id="navlogo" src="./files/logo.png" class="img-responsive visible-lg-block visible-sm-block visible-xs-block"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="main-menu">
+                <!-- 菜单栏 -->
+                <ul id="" class="navbar-nav navbar-nav-ul-padding-top"><li class="productBox" id="menu-item-2"><a href="http://developer.egret.com/cn/" target="">首页</a></li><li class="productBox dropdown" id="menu-item-22"><a href="javascript:;" target="">文档</a><ul class="subnav subnav-products flex" style="display: none;"><li class="titleBox" style="width: 200px;"><a class="subMenuLink">引擎</a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Engine2D/index.html?home=2">Egret Engine 2D<span class="Engine2D"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Engine3D/index.html?home=2">Egret Pro<span class="Engine3D"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/extension/index.html?home=2">Egret 扩展库<span class="extension"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://docs.egret.com/native/">Egret Native<span class="Native"></span></a></li></ul><ul class="subnav subnav-products flex" style="display: none;"><li class="titleBox" style="width: 600px;"><a class="subMenuLink">工具</a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Wing/index.html?home=2">Egret Wing<span class="Wing"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/DB/index.html?home=2">DragonBones<span class="DB"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Depot/index.html?home=2">Res Depot<span class="Depot"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Merger/index.html?home=2">Texture Merger<span class="Merger"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Inspector/index.html?home=2">Egret Inspector<span class="Inspector"></span></a></li><li class="productBox"><a class="subMenuLink" href="https://docs.egret.com/feather">Egret Feather<span class="Feather"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/Lakeshore/index.html?home=2">Lakeshore<span class="Lakeshore"></span></a></li><li class="productBox"><a class="subMenuLink"></a></li></ul><ul class="subnav subnav-products flex" style="display: none;"><li class="titleBox" style="width: 200px;"><a class="subMenuLink">其他</a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/platform/index.html?home=2">平台接入<span class="platform"></span></a></li><li class="productBox"><a class="subMenuLink" href="http://developer.egret.com/cn/github/egret-docs/matchvs/index.html?home=2">Matchvs 游戏云<span class="matchvs"></span></a></li><li class="productBox"><a class="subMenuLink"></a></li><li class="productBox"><a class="subMenuLink"></a></li></ul></li><li class="productBox" id="menu-item-25"><a href="http://developer.egret.com/cn/list/video/" target="">视频</a></li><li class="productBox" id="menu-item-4"><a href="http://developer.egret.com/cn/apidoc/" target="">API</a></li><li class="expBox dropdown" id="menu-item-5"><a href="http://developer.egret.com/cn/example/page/index" target="" class="dropdown-toggle" data-toggle="dropdown" style="color:#1dafec">示例</a><ul class="subnav subnav-products flex" style="display: none;"><li class="productBox" id="menu-item-23"><a href="http://developer.egret.com/cn/list/example/id/190" target="">功能演示</a></li><li class="productBox" id="menu-item-24"><a href="http://developer.egret.com/cn/example/egret2d/index.html#010-disp-basic" target="">教学示例</a></li></ul></li><li class="productBox" id="menu-item-1"><a href="http://bbs.egret.com/" target="_blank">社区</a></li></ul>                <!-- end -->
+                <li class="switch-button media-clear-pull">
+					<a href="http://developer.egret.com/en/" class="small">
+	        		中文 / English
+	        		</a>
+				</li>
+                <!-- login out -->
+				<li class="logintBox dropdown media-clear-pull" id="menu-user-login">
+					<!-- start of login -->
+					<a href="javascript:void(0);" class="navbar-login">
+						<img src="./files/login.png" alt="" class="img-responsive">
+					</a>
+					<ul class="subnav subnav-login flex" style="display:none;">
+                            <li class="logintBox">
+                                <a href="http://developer.egret.com/cn/user/login/index?goUrl=http://developer.egret.com/cn/example/egret2d/index.html#010-disp-basic" id="u-log">登陆</a>
+                            </li>
+                            <li class="logintBox">
+                                <a href="http://developer.egret.com/cn/user/register/index" id="u-reg" target="_blank">注册</a>
+                            </li>
+					</ul>
+					<!-- end of login -->
+				</li>
+				<li class="logintOutBox dropdown media-clear-pull" id="menu-user-info" style="display: none">
+					<!-- start of login success -->
+					<a href="http://developer.egret.com/cn/example/egret2d/index.html#" class="dropdown-toggle" data-toggle="dropdown">
+						<img src="./files/headicon.png" class="headicon" id="main-menu-user-headicon">
+						<span class="user-nicename" id="main-menu-user-nicename" style="display: none"></span>
+					</a>
+					<ul class="subnav subnav-login-out flex" style="display:none;">
+						<li class="logintOutBox"><a href="http://developer.egret.com/cn/user/book/index"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>
+						<li class="logintOutBox"><a href="http://developer.egret.com/cn/user/index/logout2"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li>
+					</ul>
+					<!-- end of login success -->
+				</li>
+
+                <!-- end of login out -->
+                <ul class="navbar-nav navbar-nav-ul-padding-top media-clear-pull">
+                    <li class="navbar-search">
+                        <!-- start search -->
+                        <form class="form-inline navbar-form pull-left" method="get" id="srarchForm" action="http://developer.egret.com/cn/portal/search/index">
+                            <input class="form-control" id="keyword" name="keyword" value="" type="text" placeholder="搜索...">
+                            <input type="hidden" name="page" value="1">
+                            <input type="hidden" class="" id="keytype" name="type" value="">
+                        </form>
+                        <!-- end of search -->
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>   
+</div>  
+<script src="./files/hm.js.下载"></script><script>
+    var goUrl = encodeURI(window.location.href);
+    document.getElementById("u-log").href = "/cn/user/login/index?goUrl=" + goUrl;
+    document.getElementById("u-reg").href = "/cn/user/register/index";
+</script>
+<div id="modal-content">
+    
+</div>
+			<div id="js-fullscreen">
+				<div class="left-bar">
+					<div class="search-item">
+						<input type="text" placeholder="输入关键字" id="search">
+					</div>
+					<!-- <div style="text-align: center;margin-bottom:10px;">
+						<a href="/cn/example/egret2d/index.html">2D</a> / <a href="/cn/example/egret3d/index.html">3D</a>
+					</div> -->
+					<div id="treelist" style="height: 789px;"><ul tabindex="0" class="ui-easytree easytree-container easytree-focused" "=""><li><span id="_st_node_7888_0" class="easytree-node  easytree-ico-cf easytree-exp-e"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="显示对象基本" class="easytree-title">显示对象基本</span></span><ul tabindex="0" class="" style="display: block;" "=""><li><span id="_st_node_7888_0_0" class="easytree-node  easytree-ico-c easytree-exp-n easytree-active"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">最基本的显示</span></span></li><li><span id="_st_node_7888_0_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">锚点及旋转缩放</span></span></li><li><span id="_st_node_7888_0_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">碰撞检测</span></span></li><li><span id="_st_node_7888_0_3" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">遮罩的用法</span></span></li></ul></li><li><span id="_st_node_7888_1" class="easytree-node  easytree-ico-cf easytree-exp-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="显示对象与容器" class="easytree-title">显示对象与容器</span></span><ul tabindex="0" class="" style="display: none;" "=""><li><span id="_st_node_7888_1_0" class="easytree-node  easytree-ico-c easytree-exp-n"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">添加与删除显示对象</span></span></li><li><span id="_st_node_7888_1_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">深度管理</span></span></li><li><span id="_st_node_7888_1_2" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">容器的使用</span></span></li></ul></li><li><span id="_st_node_7888_2" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="图形绘制" class="easytree-title">图形绘制</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_2_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">贝塞尔曲线</span></span></li><li><span id="_st_node_7888_2_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">圆弧</span></span></li><li><span id="_st_node_7888_2_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">高级圆弧</span></span></li><li><span id="_st_node_7888_2_3" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">画圆</span></span></li><li><span id="_st_node_7888_2_4" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">画线</span></span></li><li><span id="_st_node_7888_2_5" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">矩形</span></span></li></ul></li><li><span id="_st_node_7888_3" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="高级图像" class="easytree-title">高级图像</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_3_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">脏矩形</span></span></li><li><span id="_st_node_7888_3_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">位图缓存</span></span></li><li><span id="_st_node_7888_3_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">点击穿透</span></span></li><li><span id="_st_node_7888_3_3" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">动态截屏</span></span></li></ul></li><li><span id="_st_node_7888_4" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="自定义Shader" class="easytree-title">自定义Shader</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_4_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">示例一</span></span></li><li><span id="_st_node_7888_4_1" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">示例二</span></span></li></ul></li><li><span id="_st_node_7888_5" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="图像应用" class="easytree-title">图像应用</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_5_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">纹理集</span></span></li><li><span id="_st_node_7888_5_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">九宫格</span></span></li><li><span id="_st_node_7888_5_2" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">位图字体</span></span></li></ul></li><li><span id="_st_node_7888_6" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="显示交互" class="easytree-title">显示交互</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_6_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">拖动</span></span></li><li><span id="_st_node_7888_6_1" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">多点触摸</span></span></li></ul></li><li><span id="_st_node_7888_7" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="缓动动画" class="easytree-title">缓动动画</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_7_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">基本缓动</span></span></li><li><span id="_st_node_7888_7_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">缓动产生事件</span></span></li><li><span id="_st_node_7888_7_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">缓动过程方程</span></span></li><li><span id="_st_node_7888_7_3" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">复合缓动</span></span></li></ul></li><li><span id="_st_node_7888_8" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="时间与运行" class="easytree-title">时间与运行</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_8_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">动态帧频</span></span></li><li><span id="_st_node_7888_8_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">延迟调用</span></span></li><li><span id="_st_node_7888_8_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">定时器</span></span></li><li><span id="_st_node_7888_8_3" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">强制刷新</span></span></li></ul></li><li><span id="_st_node_7888_9" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="调试功能" class="easytree-title">调试功能</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_9_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">脏矩形调试显示</span></span></li><li><span id="_st_node_7888_9_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">基本FPS监视器</span></span></li><li><span id="_st_node_7888_9_2" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">屏幕调试日志</span></span></li></ul></li><li><span id="_st_node_7888_10" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="帧动画显示" class="easytree-title">帧动画显示</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_10_0" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">帧动画</span></span></li></ul></li><li><span id="_st_node_7888_11" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="文本显示" class="easytree-title">文本显示</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_11_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">字体加粗</span></span></li><li><span id="_st_node_7888_11_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">字体颜色</span></span></li><li><span id="_st_node_7888_11_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">字体超链接</span></span></li><li><span id="_st_node_7888_11_3" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">字体倾斜</span></span></li><li><span id="_st_node_7888_11_4" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">文本布局</span></span></li><li><span id="_st_node_7888_11_5" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">字体大小</span></span></li><li><span id="_st_node_7888_11_6" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">文本描边</span></span></li><li><span id="_st_node_7888_11_7" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">富文本（标准格式）</span></span></li><li><span id="_st_node_7888_11_8" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">富文本（xml格式）</span></span></li><li><span id="_st_node_7888_11_9" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">输入文本</span></span></li></ul></li><li><span id="_st_node_7888_12" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="媒体播放" class="easytree-title">媒体播放</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_12_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">声音播放</span></span></li><li><span id="_st_node_7888_12_1" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">视频播放</span></span></li></ul></li><li><span id="_st_node_7888_13" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="RES资源管理" class="easytree-title">RES资源管理</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_13_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">RES组动态加载</span></span></li><li><span id="_st_node_7888_13_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">RES动态加载</span></span></li><li><span id="_st_node_7888_13_2" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">RES组预加载</span></span></li></ul></li><li><span id="_st_node_7888_14" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="粒子" class="easytree-title">粒子</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_14_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">不明物体</span></span></li><li><span id="_st_node_7888_14_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">摇钱树</span></span></li><li><span id="_st_node_7888_14_2" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">篝火</span></span></li></ul></li><li><span id="_st_node_7888_15" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="骨骼动画" class="easytree-title">骨骼动画</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_15_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">基本动画</span></span></li><li><span id="_st_node_7888_15_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">换装动画</span></span></li><li><span id="_st_node_7888_15_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">骨骼动画实时生成</span></span></li><li><span id="_st_node_7888_15_3" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">IK骨骼约束</span></span></li><li><span id="_st_node_7888_15_4" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">机甲战士</span></span></li></ul></li><li><span id="_st_node_7888_16" class="easytree-node  easytree-exp-c easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="EUI基础控件" class="easytree-title">EUI基础控件</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_16_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">显示文本</span></span></li><li><span id="_st_node_7888_16_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">输入文本</span></span></li><li><span id="_st_node_7888_16_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">图片</span></span></li><li><span id="_st_node_7888_16_3" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">按钮</span></span></li><li><span id="_st_node_7888_16_4" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">状态切换按钮</span></span></li><li><span id="_st_node_7888_16_5" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">单选按钮</span></span></li><li><span id="_st_node_7888_16_6" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">复选框</span></span></li><li><span id="_st_node_7888_16_7" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">滑动选择器</span></span></li><li><span id="_st_node_7888_16_8" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">列表</span></span></li><li><span id="_st_node_7888_16_9" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">对话框</span></span></li><li><span id="_st_node_7888_16_10" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">选项卡</span></span></li></ul></li><li><span id="_st_node_7888_17" class="easytree-node  easytree-exp-cl easytree-ico-cf"><span class="easytree-expander"></span><span class="easytree-icon"></span><span title="EUI布局及高级显示" class="easytree-title">EUI布局及高级显示</span></span><ul tabindex="0" class="" style="display:none" "=""><li><span id="_st_node_7888_17_0" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">基本布局</span></span></li><li><span id="_st_node_7888_17_1" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">水平布局</span></span></li><li><span id="_st_node_7888_17_2" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">垂直布局</span></span></li><li><span id="_st_node_7888_17_3" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">网格布局</span></span></li><li><span id="_st_node_7888_17_4" class="easytree-node  easytree-exp-n easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">自定义布局</span></span></li><li><span id="_st_node_7888_17_5" class="easytree-node  easytree-exp-nl easytree-ico-c"><span class="easytree-expander"></span><span class="easytree-icon"></span><span class="easytree-title">自定义项呈示器</span></span></li></ul></li></ul></div>
+					<div id="searchResult"></div>
+				</div>
+				<div id="playground-host" class="col-sm-8">
+						<div class="demo-info-2d">
+							<span id="exampleTitle">最基本的显示</span>
+							<span class="btn-blue pull-right" id="down">下载</span>
+							<span class="btn-blue pull-right" id="execute">运行</span>
+							<span class="btn-blue pull-right" id="reset">重置</span>
+						</div>
+						<div id="wrapper" style="height: 812px;">
+							<div id="typescriptEditor" style="margin-top: 10px; border: 1px solid rgb(225, 225, 225); width: 100%; height: 772px;" data-keybinding-context="1" data-mode-id="typescript"><div class="monaco-editor vs" style="width: 451px; height: 770px;"><div class="overflow-guard" style="width: 451px; height: 770px;"><div class="margin-view-overlays monaco-editor-background" role="presentation" aria-hidden="true" style="position: absolute; width: 48px; height: 1454px; transform: translate3d(0px, -1px, 0px);" data-transform="translate3d(0px, -1px, 0px)"><div class="glyph-margin" style="left:0px;width:0px;height:1454px;"></div><div linenumber="1" style="top:0px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">1</div></div><div linenumber="2" style="top:19px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">2</div></div><div linenumber="3" style="top:38px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">3</div></div><div linenumber="4" style="top:57px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">4</div></div><div linenumber="5" style="top:76px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">5</div></div><div linenumber="6" style="top:95px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">6</div></div><div linenumber="7" style="top:114px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">7</div></div><div linenumber="8" style="top:133px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">8</div></div><div linenumber="9" style="top:152px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">9</div></div><div linenumber="10" style="top:171px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">10</div></div><div linenumber="11" style="top:190px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">11</div></div><div linenumber="12" style="top:209px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">12</div></div><div linenumber="13" style="top:228px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">13</div></div><div linenumber="14" style="top:247px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">14</div></div><div linenumber="15" style="top:266px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">15</div></div><div linenumber="16" style="top:285px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">16</div></div><div linenumber="17" style="top:304px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">17</div></div><div linenumber="18" style="top:323px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">18</div></div><div linenumber="19" style="top:342px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">19</div></div><div linenumber="20" style="top:361px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">20</div></div><div linenumber="21" style="top:380px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">21</div></div><div linenumber="22" style="top:399px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">22</div></div><div linenumber="23" style="top:418px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">23</div></div><div linenumber="24" style="top:437px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">24</div></div><div linenumber="25" style="top:456px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">25</div></div><div linenumber="26" style="top:475px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">26</div></div><div linenumber="27" style="top:494px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">27</div></div><div linenumber="28" style="top:513px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">28</div></div><div linenumber="29" style="top:532px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">29</div></div><div linenumber="30" style="top:551px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">30</div></div><div linenumber="31" style="top:570px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">31</div></div><div linenumber="32" style="top:589px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">32</div></div><div linenumber="33" style="top:608px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">33</div></div><div linenumber="34" style="top:627px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">34</div></div><div linenumber="35" style="top:646px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">35</div></div><div linenumber="36" style="top:665px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">36</div></div><div linenumber="37" style="top:684px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">37</div></div><div linenumber="38" style="top:703px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">38</div></div><div linenumber="39" style="top:722px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">39</div></div><div linenumber="40" style="top:741px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">40</div></div><div linenumber="41" style="top:760px;height:19px;" class="view-line"><div class="line-numbers" style="left:0px;width:38px;height:19px;">41</div></div></div><div class="monaco-scrollable-element vs" aria-hidden="true" role="presentation" style="position: absolute; overflow: hidden; left: 48px; width: 403px; height: 770px;"><div class="lines-content monaco-editor-background" style="overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, -1px, 0px);" data-transform="translate3d(0px, -1px, 0px)"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 600px; height: 0px;"><div linenumber="1" style="top:0px;height:19px;" class="view-line"><div class="current-line" style="width:600px; height:19px;"></div></div><div linenumber="2" style="top:19px;height:19px;" class="view-line"></div><div linenumber="3" style="top:38px;height:19px;" class="view-line"></div><div linenumber="4" style="top:57px;height:19px;" class="view-line"></div><div linenumber="5" style="top:76px;height:19px;" class="view-line"></div><div linenumber="6" style="top:95px;height:19px;" class="view-line"></div><div linenumber="7" style="top:114px;height:19px;" class="view-line"></div><div linenumber="8" style="top:133px;height:19px;" class="view-line"></div><div linenumber="9" style="top:152px;height:19px;" class="view-line"></div><div linenumber="10" style="top:171px;height:19px;" class="view-line"></div><div linenumber="11" style="top:190px;height:19px;" class="view-line"></div><div linenumber="12" style="top:209px;height:19px;" class="view-line"></div><div linenumber="13" style="top:228px;height:19px;" class="view-line"></div><div linenumber="14" style="top:247px;height:19px;" class="view-line"></div><div linenumber="15" style="top:266px;height:19px;" class="view-line"></div><div linenumber="16" style="top:285px;height:19px;" class="view-line"></div><div linenumber="17" style="top:304px;height:19px;" class="view-line"></div><div linenumber="18" style="top:323px;height:19px;" class="view-line"></div><div linenumber="19" style="top:342px;height:19px;" class="view-line"></div><div linenumber="20" style="top:361px;height:19px;" class="view-line"></div><div linenumber="21" style="top:380px;height:19px;" class="view-line"></div><div linenumber="22" style="top:399px;height:19px;" class="view-line"></div><div linenumber="23" style="top:418px;height:19px;" class="view-line"></div><div linenumber="24" style="top:437px;height:19px;" class="view-line"></div><div linenumber="25" style="top:456px;height:19px;" class="view-line"></div><div linenumber="26" style="top:475px;height:19px;" class="view-line"></div><div linenumber="27" style="top:494px;height:19px;" class="view-line"></div><div linenumber="28" style="top:513px;height:19px;" class="view-line"></div><div linenumber="29" style="top:532px;height:19px;" class="view-line"></div><div linenumber="30" style="top:551px;height:19px;" class="view-line"></div><div linenumber="31" style="top:570px;height:19px;" class="view-line"></div><div linenumber="32" style="top:589px;height:19px;" class="view-line"></div><div linenumber="33" style="top:608px;height:19px;" class="view-line"></div><div linenumber="34" style="top:627px;height:19px;" class="view-line"></div><div linenumber="35" style="top:646px;height:19px;" class="view-line"></div><div linenumber="36" style="top:665px;height:19px;" class="view-line"></div><div linenumber="37" style="top:684px;height:19px;" class="view-line"></div><div linenumber="38" style="top:703px;height:19px;" class="view-line"></div><div linenumber="39" style="top:722px;height:19px;" class="view-line"></div><div linenumber="40" style="top:741px;height:19px;" class="view-line"></div><div linenumber="41" style="top:760px;height:19px;" class="view-line"></div></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines" role="presentation" aria-hidden="true" style="position: absolute; width: 600px; height: 1454px;"><div linenumber="1" style="top:0px;height:19px;" class="view-line"><span><span class="token comment doc ts">/**</span></span></div><div linenumber="2" style="top:19px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;@copyright&nbsp;www.egret.com</span></span></div><div linenumber="3" style="top:38px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;@author&nbsp;city</span></span></div><div linenumber="4" style="top:57px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;@desc&nbsp;显示对象最基本的操作。</span></span></div><div linenumber="5" style="top:76px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;显示对象可以是外部加载的JPG、PNG图片资源，也可以是程序绘制的形状。</span></span></div><div linenumber="6" style="top:95px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所有的显示对象显示均需要添加到显示列表。</span></span></div><div linenumber="7" style="top:114px;height:19px;" class="view-line"><span><span class="token comment doc ts">&nbsp;*&nbsp;@version&nbsp;5.0.7</span></span></div><div linenumber="8" style="top:133px;height:19px;" class="view-line"><span><span class="token comment ts">&nbsp;*/</span></span></div><div linenumber="9" style="top:152px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div><div linenumber="10" style="top:171px;height:19px;" class="view-line"><span><span class="token keyword ts">class</span><span class="token ">&nbsp;</span><span class="token identifier ts">Main</span><span class="token ">&nbsp;</span><span class="token keyword ts">extends</span><span class="token ">&nbsp;</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">DisplayObjectContainer</span><span class="token ">&nbsp;</span><span class="token delimiter bracket ts">{</span></span></div><div linenumber="11" style="top:190px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div><div linenumber="12" style="top:209px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">public</span><span class="token ">&nbsp;</span><span class="token keyword ts">constructor</span><span class="token delimiter parenthesis ts">(</span><span class="token delimiter parenthesis ts">)</span><span class="token ">&nbsp;</span><span class="token delimiter bracket ts">{</span></span></div><div linenumber="13" style="top:228px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">super</span><span class="token delimiter parenthesis ts">(</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="14" style="top:247px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">once</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Event</span><span class="token delimiter ts">.</span><span class="token identifier ts">ADDED_TO_STAGE</span><span class="token delimiter ts">,</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">onAddToStage</span><span class="token delimiter ts">,</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="15" style="top:266px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token delimiter bracket ts">}</span></span></div><div linenumber="16" style="top:285px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div><div linenumber="17" style="top:304px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">private</span><span class="token ">&nbsp;</span><span class="token identifier ts">onAddToStage</span><span class="token delimiter parenthesis ts">(</span><span class="token identifier ts">event</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Event</span><span class="token delimiter parenthesis ts">)</span><span class="token ">&nbsp;</span><span class="token delimiter bracket ts">{</span></span></div><div linenumber="18" style="top:323px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">var</span><span class="token ">&nbsp;</span><span class="token identifier ts">imgLoader</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">ImageLoader</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token keyword ts">new</span><span class="token ">&nbsp;</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">ImageLoader</span><span class="token delimiter ts">;</span></span></div><div linenumber="19" style="top:342px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">imgLoader</span><span class="token delimiter ts">.</span><span class="token identifier ts">once</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Event</span><span class="token delimiter ts">.</span><span class="token identifier ts">COMPLETE</span><span class="token delimiter ts">,</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">imgLoadHandler</span><span class="token delimiter ts">,</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="20" style="top:361px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">imgLoader</span><span class="token delimiter ts">.</span><span class="token identifier ts">load</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token string ts">"resource/cartoon-egret_00.png"</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="21" style="top:380px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token delimiter bracket ts">}</span></span></div><div linenumber="22" style="top:399px;height:19px;" class="view-line"><span><span>&nbsp;</span></span></div><div linenumber="23" style="top:418px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">private</span><span class="token ">&nbsp;</span><span class="token identifier ts">_txInfo</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">TextField</span><span class="token delimiter ts">;</span></span></div><div linenumber="24" style="top:437px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">private</span><span class="token ">&nbsp;</span><span class="token identifier ts">_bgInfo</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Shape</span><span class="token delimiter ts">;</span></span></div><div linenumber="25" style="top:456px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span></span></div><div linenumber="26" style="top:475px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">private</span><span class="token ">&nbsp;</span><span class="token identifier ts">imgLoadHandler</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token identifier ts">evt</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Event</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">:</span><span class="token keyword ts">void</span><span class="token delimiter bracket ts">{</span></span></div><div linenumber="27" style="top:494px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></div><div linenumber="28" style="top:513px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">var</span><span class="token ">&nbsp;</span><span class="token identifier ts">bmd</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">BitmapData</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token identifier ts">evt</span><span class="token delimiter ts">.</span><span class="token identifier ts">currentTarget</span><span class="token delimiter ts">.</span><span class="token identifier ts">data</span><span class="token delimiter ts">;</span></span></div><div linenumber="29" style="top:532px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token comment doc ts">/***&nbsp;本示例关键代码段开始&nbsp;***/</span></span></div><div linenumber="30" style="top:551px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token comment ts">///&nbsp;将已加载完成的图像显示出来</span></span></div><div linenumber="31" style="top:570px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">var</span><span class="token ">&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">:</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Bitmap</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token keyword ts">new</span><span class="token ">&nbsp;</span><span class="token identifier ts">egret</span><span class="token delimiter ts">.</span><span class="token identifier ts">Bitmap</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token identifier ts">bmd</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="32" style="top:589px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">x</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token number ts">100</span><span class="token delimiter ts">;</span></span></div><div linenumber="33" style="top:608px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">y</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token number ts">100</span><span class="token delimiter ts">;</span></span></div><div linenumber="34" style="top:627px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">addChild</span><span class="token delimiter parenthesis ts">(</span><span class="token ">&nbsp;</span><span class="token identifier ts">bird</span><span class="token ">&nbsp;</span><span class="token delimiter parenthesis ts">)</span><span class="token delimiter ts">;</span></span></div><div linenumber="35" style="top:646px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token comment doc ts">/***&nbsp;本示例关键代码段结束&nbsp;***/</span></span></div><div linenumber="36" style="top:665px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></div><div linenumber="37" style="top:684px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token comment ts">///&nbsp;为定位设置基准点(即锚点)</span></span></div><div linenumber="38" style="top:703px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">anchorOffsetX</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token identifier ts">bmd</span><span class="token delimiter ts">.</span><span class="token identifier ts">width</span><span class="token ">&nbsp;</span><span class="token delimiter ts">/</span><span class="token ">&nbsp;</span><span class="token number ts">2</span><span class="token delimiter ts">;</span></span></div><div linenumber="39" style="top:722px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">anchorOffsetY</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token identifier ts">bmd</span><span class="token delimiter ts">.</span><span class="token identifier ts">height</span><span class="token ">&nbsp;</span><span class="token delimiter ts">/</span><span class="token ">&nbsp;</span><span class="token number ts">2</span><span class="token delimiter ts">;</span></span></div><div linenumber="40" style="top:741px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">x</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">stage</span><span class="token delimiter ts">.</span><span class="token identifier ts">stageWidth</span><span class="token ">&nbsp;</span><span class="token delimiter ts">*</span><span class="token ">&nbsp;</span><span class="token number ts">.5</span><span class="token delimiter ts">;</span></span></div><div linenumber="41" style="top:760px;height:19px;" class="view-line"><span><span class="token ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="token identifier ts">bird</span><span class="token delimiter ts">.</span><span class="token identifier ts">y</span><span class="token ">&nbsp;</span><span class="token delimiter ts">=</span><span class="token ">&nbsp;</span><span class="token keyword ts">this</span><span class="token delimiter ts">.</span><span class="token identifier ts">stage</span><span class="token delimiter ts">.</span><span class="token identifier ts">stageHeight</span><span class="token ">&nbsp;</span><span class="token delimiter ts">*</span><span class="token ">&nbsp;</span><span class="token number ts">.5</span><span class="token delimiter ts">;</span></span></div></div><div class="contentWidgets"></div><div class="cursors-layer" style="transform: translate3d(0px, 0px, 0px);"><div class="cursor" role="presentation" aria-hidden="true" linenumber="1" column="1" style="height: 19px; top: 0px; left: 0px; display: block; visibility: hidden;"></div></div></div><div class="invisible scrollbar horizontal fade" style="transform: translate3d(0px, 0px, 0px); position: absolute; width: 389px; height: 10px; left: 0px; bottom: 0px;"><div class="slider" data-transform="translate3d(0px, 0px, 0px)" style="position: absolute; top: 0px; left: 0px; height: 10px; width: 261px; transform: translate3d(0px, 0px, 0px);"></div></div><canvas class="decorationsOverviewRuler" style="position: absolute; transform: translate3d(0px, 0px, 0px); top: 0px; right: 0px;" width="14" height="760"></canvas><div class="invisible scrollbar vertical fade" style="transform: translate3d(0px, 0px, 0px); position: absolute; width: 14px; height: 760px; right: 0px; top: 0px;"><div class="slider" data-transform="translate3d(0px, 0px, 0px)" style="position: absolute; top: 0px; left: 0px; width: 14px; height: 402px; transform: translate3d(0px, 0px, 0px);"></div></div></div><div style="width: 451px;" class="scroll-decoration"></div><div class="overlayWidgets" style="width: 451px;"><div class="monaco-editor-hover monaco-editor-background" aria-hidden="true" role="presentation" widgetid="editor.contrib.modesGlyphHoverWidget" style="display: none; position: absolute;"></div><div class="editor-widget find-widget can-replace" aria-hidden="false" widgetid="editor.contrib.findWidget" style="position: absolute;"><div title="Toggle Replace mode" tabindex="-1" class="button toggle left collapse" role="button" aria-label="Toggle Replace mode" aria-expanded="false"></div><div class="find-part"><div class="monaco-findInput disabled" style="width: 221px;"><div class="monaco-inputbox idle"><div class="wrapper"><input class="input" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" wrap="off" aria-label="Find" placeholder="Find" disabled="" style="width: 155px;"></div></div><div class="controls"><div title="Match Case" class="custom-checkbox case-sensitive unchecked" aria-checked="false" aria-label="Match Case" tabindex="-1" role="checkbox"></div><div title="Match Whole Word" class="custom-checkbox whole-word unchecked" aria-checked="false" aria-label="Match Whole Word" tabindex="-1" role="checkbox"></div><div title="Use Regular Expression" class="custom-checkbox regex unchecked" aria-checked="false" aria-label="Use Regular Expression" tabindex="-1" role="checkbox"></div></div></div><div title="Previous match (Shift+F3)" tabindex="-1" class="button previous" role="button" aria-label="Previous match (Shift+F3)"></div><div title="Next match (F3)" tabindex="-1" class="button next" role="button" aria-label="Next match (F3)"></div><div class="monaco-checkbox" title="Find in selection"><input type="checkbox" class="checkbox" id="checkbox-0" disabled=""><label class="label" for="checkbox-0"></label></div><div title="Close (Escape)" tabindex="-1" class="button close-fw" role="button" aria-label="Close (Escape)"></div></div><div class="replace-part"><div class="replace-input" style="width: 221px;"><div class="monaco-inputbox idle"><div class="wrapper"><input class="input" autocorrect="off" autocapitalize="off" spellcheck="false" type="text" wrap="off" aria-label="Replace" placeholder="Replace" disabled=""></div></div></div><div title="Replace" tabindex="-1" class="button replace" role="button" aria-label="Replace"></div><div title="Replace All" tabindex="-1" class="button replace-all" role="button" aria-label="Replace All"></div></div></div></div><textarea data-keybinding-context="2" class="inputarea" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Editor content" role="textbox" aria-multiline="true" style="top: 0px; left: 0px; font-size: 14px; line-height: 19px;"></textarea><div class="monaco-editor-background line-numbers textAreaCover" style="position: absolute; width: 1px; height: 1px; top: 0px; left: 0px;"></div></div><div class="context-view hidden" aria-hidden="true"></div><div class="monaco-editor-hover monaco-editor-background" widgetid="editor.contrib.modesContentHoverWidget" style="position: absolute; max-width: 403px; visibility: hidden;"><div style="display: inline-block;"></div></div><div class="editor-widget parameter-hints-widget" widgetid="editor.widget.parameterHintsWidget" style="position: absolute; max-width: 403px; visibility: hidden;"><div class="wrapper monaco-editor-background"><div class="buttons"><div class="button previous"></div><div class="button next"></div></div><div class="overloads"></div><div class="signatures"></div></div></div><div class="lightbulp-glyph" widgetid="__lightBulpWidget" style="width: 20px; height: 20px; position: absolute; max-width: 403px; visibility: hidden;"></div><div class="editor-widget quickfix-widget monaco-editor-background no-icons" widgetid="editor.widget.QuickFixSelectionWidget" style="width: 360px; position: absolute; max-width: 403px; visibility: hidden;"><div class="monaco-tree focused" tabindex="0"><div class="monaco-scrollable-element " aria-hidden="true" role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-tree-wrapper" style="overflow: hidden;"><div class="monaco-tree-rows"><div class="monaco-tree-row fake"><div class="content"></div></div></div></div><div class="invisible scrollbar horizontal" style="position: absolute; width: 348px; height: 0px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; width: 348px;"></div></div><div class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px;"></div></div></div></div></div><div class="editor-widget suggest-widget monaco-editor-background" widgetid="editor.widget.suggestWidget" style="width: 438px; top: 0px; left: 0px; position: absolute; max-width: 403px; visibility: hidden;"><div class="monaco-tree focused" tabindex="0"><div class="monaco-scrollable-element " aria-hidden="true" role="presentation" style="position: relative; overflow: hidden;"><div class="monaco-tree-wrapper" style="overflow: hidden;"><div class="monaco-tree-rows"><div class="monaco-tree-row fake"><div class="content"></div></div></div></div><div class="invisible scrollbar horizontal" style="position: absolute; width: 395px; height: 0px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 10px; width: 395px;"></div></div><div class="invisible scrollbar vertical" style="position: absolute;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 10px;"></div></div></div></div></div><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="height: 19px; position: absolute; max-width: 403px; visibility: hidden;"><input class="rename-input"></div></div></div>
+							<button id="screen" class="btn-success" style="display: none; height: 778px;">||</button>
+						</div>
+
+						<div class="classmenu" style="display:none;">
+							<!--<spna id="exampleTitle">最基本的显示</spna>-->
+							 <a id="exampleDes" title="示例介绍" href="http://developer.egret.com/cn/example/egret2d/index.html#"><img src="./files/des.png"></a>
+						</div>
+
+						<button id="execute" class="btn btn-success" style="position: absolute;top: 0px;right: 212px;display:none;">运行</button>
+						<button id="reset" class="btn btn-success" style="position: absolute;top: 0px;right: 105px;display:none;">重置</button>
+						<!--<button id="down" class="btn btn-success" style="position: absolute;top: 0px;right: 0px;display:none;">下载</button>-->
+				</div>
+				<div class="col-sm-4">
+					<div style="text-align: center;" class="demo-info-2d">
+						<a class="btn-qrcode" id="erweima" style="background-image: url(&quot;/cn/data/upload//simpleboot/example/qr.svg&quot;); right: 46.5px;">
+							二维码
+						</a>
+					</div>
+					<div id="playground-result" style="height: 770px;">
+						<div class="coderesult">
+							<p class="poptitle" style="width: 181.46px; top: 234.484px; line-height: 38.1278px; font-size: 12px; left: 14.9916px;">最基本的显示</p>
+							<iframe id="popiframe" allowfullscreen="true" src="./files/index.html" style="background-image: url(&quot;/cn/example/page/examples/1/bg/bai.jpg&quot;); width: 181.46px; margin-left: 14.9916px; height: 269.741px; margin-top: 274.39px;">
+							</iframe>
+							<div class="qrpopmodule" style="display: none; width: 181px; height: 308px; left: 14.9916px; top: 236px;">
+								<div id="qrcode" class="center-block" title="http://developer.egret.com/cn/example/page/examples/1/010-disp-basic/bin-release/web/001/" style="display: none; right: 46.5px;"><canvas width="120" height="120" style="display: none;"></canvas><img style="display: block;" src="data:image/png;base64,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"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<script type="text/javascript">
+//全局变量
+    var GV = {
+        DIMAUB: "/cn/",
+        JS_ROOT: "statics/js/",
+        TOKEN: ""
+    };
+</script>
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- change to bootstrap3 -->
+<script src="./files/jquery.min.js.下载"></script>
+<script src="./files/jquery-migrate.min.js.下载"></script>
+<script src="./files/wind.min.js.下载"></script>
+<!-- change to  bootstrap3 -->
+<script src="./files/bootstrap.min.js.下载"></script>
+<script src="./files/frontend.min.js.下载"></script>
+<script>
+    (function(){
+        $("#menu-item-5").removeClass("productBox");
+        $("#menu-item-5").removeClass("dropdown");
+        $("#menu-item-5").addClass("expBox");  
+        $("#menu-item-5").addClass("dropdown");
+    })();
+</script>
+<script src="./files/nav.min.js.下载"></script>
+<div style="position: absolute;top:80px;right:20px;width: 220px;line-height: 30px;">
+    <a style="color:#ffffff;" href="https://egret.com/products" target="_blank"><span style="font-size:16px;font-weight:500;">官方教程文档位置调整通知</span><br>官方软件产品的使用手册、API文档、视频教程等资料已调整至对应的产品页面，开发者朋友可点击登陆所需的产品页面查找，给您带来的不便非常抱歉，谢谢！</a>
+</div>
+
+
+
+
+<script>
+    $(function () {
+        $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) {
+            e.stopPropagation();
+        });
+        
+        (function ($) {
+            $.fn.totop = function (opt) {
+                var scrolling = false;
+                return this.each(function () {
+                    var $this = $(this);
+                    $(window).scroll(function () {
+                        if (!scrolling) {
+                            var sd = $(window).scrollTop();
+                            if (sd > 100) {
+                                $this.fadeIn();
+                            } else {
+                                $this.fadeOut();
+                            }
+                        }
+                    });
+
+                    $this.click(function () {
+                        scrolling = true;
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 500, function () {
+                            scrolling = false;
+                            $this.fadeOut();
+                        });
+                    });
+                });
+            };
+        })(jQuery);
+
+        $("#backtotop").totop();
+    });
+    
+function setNavLogo(){
+    if(document.body.clientWidth>1270)
+    {
+        $("#navlogo").attr("src", "/cn/tpl/simplebootx/Public/images/logo.png");
+    }else{
+        $("#navlogo").attr("src", "/cn/tpl/simplebootx/Public/images/logo.png");
+    }
+}
+
+function getLoginInfo(){
+    // $.post("/cn/user/index/is_login", {}, function (data) {
+    //     if (data.status == 1)
+    //     {
+            
+    //         $("#edn_user_synlogin").attr("src","/cn/user/login/edn_user_synlogin");
+    //         $("#main-menu-user-headicon").attr("src", "http://bbs.egret.com/uc_server/avatar.php?uid=" + data.user.avatar + "&size=middle");
+    //         $("#main-menu-user-nicename").text(data.user.user_nicename != "" ? data.user.user_nicename : data.user.user_login);
+    //         if(data.user.user_type==1)
+    //             $("#menu-user-info .subnav-login-out").prepend("<li class='logintOutBox'><a href=\"/cn/admin/index\"><i class='fa fa-user'></i> &nbsp;后台管理</a></li>");
+    //         $("#menu-user-login").hide();
+    //         $("#menu-user-info").show();
+
+    //     }
+    var data = {"status": 0}
+        if (data.status == 0) {
+            $("#menu-user-info").hide();
+            $("#menu-user-login").show();
+        }
+
+    // });
+}
+
+function checkLogin(){
+    if($("#main-menu-user-nicename").text()!="")
+    {
+        return true;
+    }
+    return false;
+}
+
+$(window).resize(function(){         
+    setNavLogo()
+});
+
+$(window).ready(function(){         
+    getLoginInfo();
+});
+
+;(function() {
+    "use strict";
+    //var index=window.location.href.indexOf("/cn/");
+    //var mode=window.location.href.substr(index);
+    //$("#main-menu").find("[href='"+mode+"']").attr("style","color:#FFFFFF");
+    if(window.location.href.indexOf("/cn/page/index/id/8")>0)
+    {
+        $("#menu-item-2 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("book")>0)
+    {
+        $("#menu-item-19 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("docs")>0)
+    {
+        $("#menu-item-3 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("apidoc")>0)
+    {
+        $("#menu-item-4 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("video")>0)
+    {
+        $("#menu-item-6 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("/cn/page/index/id/54")>0)
+    {
+        $("#menu-item-8 a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("example")>0)
+    {
+        $("#menu-item-5>a").attr("style","color:#1dafec");
+    }
+    else if(window.location.href.indexOf("activity")>0 || window.location.href.indexOf("Activity")>0)
+    {
+        $("#menu-item-8 a").attr("style","color:#1dafec");
+    }
+    if(window.location.href.indexOf("github")>0)
+    {   
+        $("#menu-item-22 a").attr("style","color:#1dafec");
+    }
+ 
+})();
+
+setNavLogo();
+
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e37d06fa1de56304c9d645100ad450ac";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script>
+			var startTime = (new Date()).getTime();
+			var selectNode = null;
+			var exampleList = null;
+			var examplePath = "/cn/example/page/examples/1/";
+			var examplerelease = "http://developer.egret.com";
+		</script>
+		<script type="text/javascript">
+			var require = {
+				baseUrl: '/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/'
+			};
+		</script>
+        <script src="./files/jquery.min.js(1).下载"></script>
+		<script src="./files/bootstrap.min.js(1).下载"></script>
+		<script type="text/javascript" src="./files/popwin.js.下载"></script>
+		<script type="text/javascript" src="./files/qrcode.min.js.下载"></script>
+		<script type="text/javascript" src="./files/loader.js.下载"></script>
+		<script type="text/javascript" src="./files/editor.main.nls.js.下载"></script>
+		<script type="text/javascript" src="./files/editor.main.js.下载"></script>
+		<script type="text/javascript" src="./files/jquery-ts.easytree.js.下载"></script>
+		<script src="./files/searchtree.js.下载"></script>
+		<script type="text/javascript" src="./files/typescript.js.下载"></script><div id="easytree-reject" class="easytree-drag-helper easytree-drop-reject" style="top: 757px; left: 156px;"><span class="easytree-drag-helper-img"></span></div><div id="easytree-accept" class="easytree-drag-helper easytree-drop-accept" style="top: 757px; left: 156px;"><span class="easytree-drag-helper-img"></span></div>
+
+	
+
+</body></html>

@@ -1,0 +1,1 @@
+'use strict';require.config({shim:{"vs/languages/typescript/common/lib/raw.typescriptServices":{exports:function(){return this.ts}}}});"undefined"!==typeof process&&(process.browser=!0);define(["./raw.typescriptServices"],function(a){return a});
