@@ -1,80 +1,43 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width">
-		<title>白鹭开发者中心 - 教学示例 </title>
-    	
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-<!-- Set render engine for 360 browser -->
-<meta name="renderer" content="webkit" />
-<!-- No Baidu Siteapp-->
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<!-- HTML5 shim for IE8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <![endif]-->
-<link  href="/cn/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="icon" />
-<link  href="/cn/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="shortcut icon" />
-<!-- change to bootstrap3 -->
-<link href="/cn/statics/simpleboot/bootstrap3/css/bootstrap.min.css?v=20160229" rel="stylesheet" />
-<!-- change theme to bootstrap3 -->
-<link href="/cn/statics/simpleboot/themes_bootstrap3/cmf/theme.min.css?v=20160812" rel="stylesheet" id="g-css-theme" />
-<link href="/cn/statics/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-<link href="/cn/tpl/simplebootx/Public/css/style.css?v=20160823" rel="stylesheet" />
-<link href="/cn/tpl/simplebootx/Public/css/header.css?v=20160830" rel="stylesheet" />
-<style>
-  .Conversion{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -24px;}
+<!DOCTYPE html> <html> <head> <meta charset="utf-8"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <meta name="viewport" content="width=device-width"> <title>Egret Developer - Sample </title> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> <!-- Set render engine for 360 browser --> <meta name="renderer" content="webkit" /> <!-- No Baidu Siteapp--> <meta http-equiv="Cache-Control" content="no-siteapp" /> <!-- HTML5 shim for IE8 support of HTML5 elements --> <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <![endif]--> <link  href="/en/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="icon" /> <link  href="/en/tpl/simplebootx/Public/images/favicon.ico" type="image/x-icon" rel="shortcut icon" /> <!-- change to bootstrap3 --> <link href="/en/statics/simpleboot/bootstrap3/css/bootstrap.min.css?v=20160229" rel="stylesheet" /> <!-- change theme to bootstrap3 --> <link href="/en/statics/simpleboot/themes_bootstrap3/cmf/theme.min.css?v=20160812" rel="stylesheet" id="g-css-theme" /> <link href="/en/statics/simpleboot/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /> <link href="/en/tpl/simplebootx/Public/css/style.css?v=20160823" rel="stylesheet" /> <link href="/en/tpl/simplebootx/Public/css/header.css?v=20160830" rel="stylesheet" /> <style>  .Conversion{position:absolute;top:13px;left:25px;
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -24px;}
   .DB{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -48px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -48px;}
   .Engine2D{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -24px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -24px;}
   .Engine3D{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -0px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -0px;}
   .extension{position:absolute;top:13px;left:25px;
-  width:24px;height:23px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -72px;}
+  width:24px;height:23px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -72px;}
   .Feather{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -48px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -48px;}
   .Inspector{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -48px -72px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -48px -72px;}
   .Lakeshore{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -24px -0px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -24px -0px;}
   .Merger{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -72px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -72px;}
   .platform{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -48px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -48px;}
   .Depot{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -24px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -24px;}
   .Wing{position:absolute;top:13px;left:25px;
-  width:24px;height:24px;background: url("/cn/statics/images/product_sprites.png") no-repeat -0px -0px;}
+  width:24px;height:24px;background: url("/en/statics/images/product_sprites.png") no-repeat -0px -0px;}
   .Native{position:absolute;top:13px;left:25px;
     width:25px;height:25px;background: url("https://cdn.www.egret.com/official/new-egret/img/product-icon-native-25.jpg");}
-  .closeButton{width:24px;height:24px;background: url("/cn/statics/images/icon/closebutton.png") no-repeat -0px -0px;background-size:cover;}
+  .closeButton{width:24px;height:24px;background: url("/en/statics/images/icon/closebutton.png") no-repeat -0px -0px;background-size:cover;}
   .microclient{position:absolute;top:13px;left:25px;
 		width:25px;height:25px;background: url("http://cdn.dev.egret.com/simpleboot/public/microclient.jpg");}
-
-  .matchvs{position:absolute;top:13px;left:25px;
-    width:25px;height:25px;background: url("/cn/data/upload/simpleboot/public/matchvs.png");}
-</style>
-
-
-		<link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.css">
-		<link href="/cn/tpl/simplebootx/Public/simpleboot/examples/css/egret3d.css" rel="stylesheet" type="text/css" />
-		<style>
+</style> <link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.css"> <link href="/en/tpl/simplebootx/Public/simpleboot/examples/css/egret3d.css" rel="stylesheet" type="text/css" /> <style>
             #treelist li>span.easytree-exp-c>.easytree-expander,
 			#treelist li>span.easytree-exp-cl>.easytree-expander
 			 {
-                background-image:url("/cn/statics/images/icon/arrow-down.png");
+                background-image:url("/en/statics/images/icon/arrow-down.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
             }
             #treelist li>span.easytree-exp-e>.easytree-expander {
-                background-image:url("/cn/statics/images/icon/arrow-up.png");
+                background-image:url("/en/statics/images/icon/arrow-up.png");
                 background-position: center;
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -87,7 +50,7 @@
 				border-radius: 15px;
 				background-color:#079bf6;
 				color: #fff;
-				cursor: pointer;
+				cursor: pointer; 
 				display:inline-block;
 			}
 			.demo-info-2d {
@@ -98,11 +61,11 @@
 			}
 			#playground-result{
 
-
+			    
 			}
 
 			#playground-result {
-				background-image: url(/cn/data/upload/simpleboot/example/phone16.png);
+				background-image: url(http://cdn.dev.egret.com/simpleboot/example/phone16.png);
 				background-position: center;
 				background-repeat: no-repeat;
 				background-origin: border-box;
@@ -146,97 +109,13 @@
 			/**
 			* left z-index: iframe 10 title 11 qrcode 12
 			*/
-        </style>
-	</head>
-
-	<body class="playground"  style="overflow:hidden;overflow-y:hidden;overflow-x:hidden">
-		<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
-			<img src="/cn/data/upload/simpleboot/example/edn5120.png" width='700'>
-		</div>
-		<div class="container-fluid  navbarbg">
-    <div class="container">
-        <nav class="navbar navbar-default" role="navigation">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-                    <span class="sr-only"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/cn"><img id="navlogo" src="" class="img-responsive visible-lg-block visible-sm-block visible-xs-block" /></a>
-            </div>
-            <div class="collapse navbar-collapse" id="main-menu">
-                <!-- 菜单栏 -->
-                <ul id=""  class="navbar-nav navbar-nav-ul-padding-top"><li   class='productBox'   id= 'menu-item-2'><a href='/cn/' target=''>首页</a></li><li   class='productBox'   id= 'menu-item-22'><a href='javascript:;' target=''>文档</a></li><li   class='productBox'   id= 'menu-item-25'><a href='http://developer.egret.com/cn/list/video/' target=''>视频</a></li><li   class='productBox'   id= 'menu-item-4'><a href='/cn/apidoc/' target=''>API</a></li><li   class='dropdown productBox'   id= 'menu-item-5'><a href='/cn/example/page/index' target='' class='dropdown-toggle' data-toggle='dropdown'>示例</b></a><ul class='subnav subnav-products flex'><li   class='productBox' id= 'menu-item-23'><a href='/cn/list/example/id/190' target=''>功能演示</a></li><li   class='productBox'   id= 'menu-item-24'><a href='/cn/example/egret2d/index.html#010-disp-basic' target=''>教学示例</a></li></ul></li><li   class='productBox'   id= 'menu-item-1'><a href='http://bbs.egret.com' target='_blank'>社区</a></li></ul>                <!-- end -->
-                <li class="switch-button pull-right media-clear-pull">
-					<a href="http://developer.egret.com/en/" class="small">
-	        		中文 / English
-	        		</a>
-				</li>
-                <!-- login out -->
-				<li class="logintBox dropdown pull-right media-clear-pull" id="menu-user-login">
-					<!-- start of login -->
-					<a href="javascript:void(0);" class="navbar-login">
-						<img src="/cn/tpl/simplebootx/Public/simpleboot/index/img/login.png" alt="" class="img-responsive" />
-					</a>
-					<ul class="subnav subnav-login flex" style="display:none;">
-                            <li class="logintBox">
-                                <a href="#" id='u-log'>登陆</a>
-                            </li>
-                            <li class="logintBox">
-                                <a href="#" id='u-reg' target="_blank">注册</a>
-                            </li>
-					</ul>
-					<!-- end of login -->
-				</li>
-				<li class="logintOutBox dropdown pull-right media-clear-pull" id="menu-user-info" style="display: none">
-					<!-- start of login success -->
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-						<img src="/cn/tpl/simplebootx//Public/images/headicon.png" class="headicon" id="main-menu-user-headicon"/>
-						<span  class="user-nicename" id="main-menu-user-nicename" style="display: none"></span>
-					</a>
-					<ul class="subnav subnav-login-out flex" style="display:none;">
-						<li class="logintOutBox"><a href="/cn/user/book/index"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>
-						<li class="logintOutBox"><a href="/cn/user/index/logout2"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li>
-					</ul>
-					<!-- end of login success -->
-				</li>
-
-                <!-- end of login out -->
-                <ul class="navbar-nav navbar-nav-ul-padding-top pull-right media-clear-pull">
-                    <li class="navbar-search">
-                        <!-- start search -->
-                        <form class="form-inline navbar-form pull-left" method="get" id="srarchForm" action="/cn/portal/search/index">
-                            <input class="form-control" id="keyword" name="keyword" value="" type="text" placeholder="搜索..." />
-                            <input type="hidden" name="page" value=1>
-                            <input type="hidden" class="" id='keytype' name="type" value=""/>
-                        </form>
-                        <!-- end of search -->
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>   
-</div>  
-<script>
+        </style> </head> <body class="playground"  style="overflow:hidden;overflow-y:hidden;overflow-x:hidden"> <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'> <img src="http://cdn.dev.egret.com/simpleboot/example/edn5120.png" width='700'> </div> <div class="container-fluid  navbarbg"> <div class="container"> <nav class="navbar navbar-default" role="navigation"> <div class="navbar-header"> <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="/en"><img id="navlogo" src="" class="img-responsive visible-lg-block visible-sm-block visible-xs-block" /></a> </div> <div class="collapse navbar-collapse" id="main-menu"> <!-- 菜单栏 --> <ul id=""  class="navbar-nav navbar-nav-ul-padding-top"><li   class='productBox'   id= 'menu-item-2'><a href='/en/' target=''>Home</a></li><li   class='productBox'   id= 'menu-item-22'><a href='javascript:;' target=''>Document</a></li><li   class='productBox'   id= 'menu-item-4'><a href='/en/apidoc/' target=''>API</a></li><li   class='productBox'   id= 'menu-item-26'><a href='/en/list/example/id/13' target=''>Demo</a></li><li   class='productBox'   id= 'menu-item-27'><a href='/en/example/egret2d/index.html#010-disp-basic' target=''>Sample</a></li><li   class='productBox'   id= 'menu-item-28'><a href='https://github.com/egret-labs/egret-core/issues' target=''>Support</a></li></ul> <!-- end --> <li class="switch-button pull-right media-clear-pull"> <a href="http://developer.egret.com/cn/" class="small">
+	        		Chinese / English
+	        		</a> </li> <!-- login out --> <li class="logintBox dropdown pull-right media-clear-pull" id="menu-user-login"> <!-- start of login --> <a href="javascript:void(0);" class="navbar-login"> <img src="/en/tpl/simplebootx/Public/simpleboot/index/img/login.png" alt="" class="img-responsive" /> </a> <ul class="subnav subnav-login flex" style="display:none;"> <li class="logintBox"> <a href="#" id='u-log'>login</a> </li> <li class="logintBox"> <a href="#" id='u-reg' target="_blank">register</a> </li> </ul> <!-- end of login --> </li> <li class="logintOutBox dropdown pull-right media-clear-pull" id="menu-user-info" style="display: none"> <!-- start of login success --> <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="/en/tpl/simplebootx//Public/images/headicon.png" class="headicon" id="main-menu-user-headicon"/> <span  class="user-nicename" id="main-menu-user-nicename" style="display: none"></span> </a> <ul class="subnav subnav-login-out flex" style="display:none;"> <li class="logintOutBox"><a href="/en/user/book/index"><i class="fa fa-user"></i> &nbsp;个人中心</a></li> <li class="logintOutBox"><a href="/en/user/index/logout2"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li> </ul> <!-- end of login success --> </li> <!-- end of login out --> <ul class="navbar-nav navbar-nav-ul-padding-top pull-right media-clear-pull"> <li class="navbar-search"> <!-- start search --> <form class="form-inline navbar-form pull-left" method="get" id="srarchForm" action="/en/portal/search/index"> <input class="form-control" id="keyword" name="keyword" value="" type="text" placeholder="search..." /> <input type="hidden" name="page" value=1> <input type="hidden" class="" id='keytype' name="type" value=""/> </form> <!-- end of search --> </li> </ul> </div> </nav> </div> </div> <script>
     var goUrl = encodeURI(window.location.href);
-    document.getElementById("u-log").href = "/cn/user/login/index?goUrl=" + goUrl;
-    document.getElementById("u-reg").href = "/cn/user/register/index";
-</script>
-<div id="modal-content">
-    
-</div>
-			<div id="js-fullscreen">
-				<div class="left-bar">
-					<div class="search-item" >
-						<input type="text" placeholder="输入关键字" id="search">
-					</div>
-					<!-- <div style="text-align: center;margin-bottom:10px;">
-						<a href="/cn/example/egret2d/index.html">2D</a> / <a href="/cn/example/egret3d/index.html">3D</a>
-					</div> -->
-					<div id="treelist" style="display: none;" >[
+    document.getElementById("u-log").href = "/en/user/login/index?goUrl=" + goUrl;
+    document.getElementById("u-reg").href = "/en/user/register/index";
+</script> <div id="modal-content"> </div> <div id="js-fullscreen"> <div class="left-bar"> <div class="search-item" > <input type="text" placeholder="Class Name" id="search"> </div> <div style="text-align: center;margin-bottom:10px;"> <a href="/en/example/egret2d/index.html">2D</a> <!-- / <a href="/en/example/egret3d/index.html">3D</a> --> </div> <div id="treelist" style="display: none;" >[
    {
       "children":[
          {
@@ -246,7 +125,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"最基本的显示"
+            "text":"Show DisplayObject"
          },
          {
             "filename":"010-disp-anchor-rota-scale",
@@ -255,7 +134,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"锚点及旋转缩放"
+            "text":"Rotation And Scale"
          },
          {
             "filename":"010-disp-coll",
@@ -264,7 +143,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"碰撞检测"
+            "text":"Collision"
          },
          {
             "filename":"010-disp-mask",
@@ -273,12 +152,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"遮罩的用法"
+            "text":"Mask"
          }
       ],
       "isFolder":true,
-      "text":"显示对象基本",
-      "tooltip":"显示对象基本"
+      "text":"DisplayObject",
+      "tooltip":"DisplayObject"
    },
    {
 
@@ -290,7 +169,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"添加与删除显示对象"
+            "text":"Add And Remove"
          },
          {
             "filename":"020-cont-depth",
@@ -299,7 +178,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"深度管理"
+            "text":"Depth"
          },
          {
             "filename":"020-cont-diff",
@@ -308,12 +187,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"容器的使用"
+            "text":"Container"
          }
       ],
       "isFolder":true,
-      "text":"显示对象与容器",
-      "tooltip":"显示对象与容器"
+      "text":"DisplayObjectContainer",
+      "tooltip":"DisplayObjectContainer"
    },
    {
       "children":[
@@ -324,7 +203,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"贝塞尔曲线"
+            "text":"Bezier Curve"
          },
          {
             "filename":"030-graph-arc",
@@ -333,7 +212,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"圆弧"
+            "text":"Arc"
          },
          {
             "filename":"030-graph-dive-arc",
@@ -342,7 +221,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"高级圆弧"
+            "text":"Mask And Arc"
          },
          {
             "filename":"030-graph-circle",
@@ -351,7 +230,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"画圆"
+            "text":"Circle"
          },
          {
             "filename":"030-graph-line",
@@ -360,7 +239,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"画线"
+            "text":"Line"
          },
          {
             "filename":"030-graph-rect",
@@ -369,12 +248,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"矩形"
+            "text":"Rectangle"
          }
       ],
       "isFolder":true,
-      "text":"图形绘制",
-      "tooltip":"图形绘制"
+      "text":"Graphics",
+      "tooltip":"Graphics"
    },
    {
       "children":[
@@ -385,7 +264,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"脏矩形"
+            "text":"Dirty Rectangle"
          },
          {
             "filename":"040-bitmap-cache",
@@ -394,7 +273,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"位图缓存"
+            "text":"Bitmap Cache"
          },
          {
             "filename":"040-bitmap-pixel-hit",
@@ -403,7 +282,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"点击穿透"
+            "text":"Click"
          },
          {
             "filename":"040-bitmap-draw",
@@ -412,37 +291,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"动态截屏"
+            "text":"Screen Capture"
          }
       ],
       "isFolder":true,
-      "text":"高级图像",
-      "tooltip":"高级图像"
-   },
-   {
-      "children":[
-         {
-            "filename":"210-egret2d-customefilter",
-            "release":"001",
-            "zip":"210-egret2d-customefilter.zip",
-            "des":"README.md",
-            "run":"true",
-            "backgroundColor":"bai",
-            "text":"示例一"
-         },
-         {
-            "filename":"210-egret2d-heibai",
-            "release":"001",
-            "zip":"210-egret2d-heibai.zip",
-            "des":"README.md",
-            "run":"true",
-            "backgroundColor":"bai",
-            "text":"示例二"
-         }
-      ],
-      "isFolder":true,
-      "text":"自定义Shader",
-      "tooltip":"自定义Shader"
+      "text":"Bitmap",
+      "tooltip":"Bitmap"
    },
    {
       "children":[
@@ -453,7 +307,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"纹理集"
+            "text":"Texture"
          },
          {
             "filename":"050-bitmap-prac-9grid",
@@ -462,7 +316,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"九宫格"
+            "text":"Scale9Grid"
          },
          {
             "filename":"050-bitmap-prac-font",
@@ -471,12 +325,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"位图字体"
+            "text":"Bitmap Font"
          }
       ],
       "isFolder":true,
-      "text":"图像应用",
-      "tooltip":"图像应用"
+      "text":"Bitmap",
+      "tooltip":"Bitmap"
    },
    {
 		"children":[
@@ -486,7 +340,7 @@
 			   "zip":"060-interact-drag-drop.zip",
 			   "des":"README.md",
 			   "run":"true",
-			   "text":"拖动",
+			   "text":"Drag",
             "backgroundColor":"bai"
          },
          {
@@ -495,13 +349,13 @@
             "zip":"060-interact-multi-point.zip",
             "des":"README.md",
             "run":"true",
-            "text":"多点触摸",
+            "text":"Multi-touch",
             "backgroundColor":"bai"
          }
 		],
 		"isFolder":true,
-		"text":"显示交互",
-		"tooltip":"显示交互"
+		"text":"Input",
+		"tooltip":"Input"
    },
    {
       "children":[
@@ -512,7 +366,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"基本缓动"
+            "text":"Tween"
          },
          {
             "filename":"070-tween-event",
@@ -521,7 +375,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"缓动产生事件"
+            "text":"Tween Event"
          },
          {
             "filename":"070-tween-ease",
@@ -530,7 +384,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"缓动过程方程"
+            "text":"Tween Func"
          },
          {
             "filename":"070-tween-comp",
@@ -539,12 +393,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"复合缓动"
+            "text":"Overlap"
          }
       ],
       "isFolder":true,
-      "text":"缓动动画",
-      "tooltip":"缓动动画"
+      "text":"Tween",
+      "tooltip":"Tween"
    },
    {
       "children":[
@@ -555,7 +409,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"动态帧频"
+            "text":"FPS"
          },
          {
             "filename":"080-run-timeout",
@@ -564,7 +418,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"延迟调用"
+            "text":"Delay Callback"
          },
          {
             "filename":"080-run-timer-tick-enterframe",
@@ -573,7 +427,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"定时器"
+            "text":"Timer"
          },
          {
             "filename":"080-run-update-after-event",
@@ -582,12 +436,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"强制刷新"
+            "text":"Force Update"
          }
       ],
       "isFolder":true,
-      "text":"时间与运行",
-      "tooltip":"时间与运行"
+      "text":"Time",
+      "tooltip":"Time"
    },
    {
       "children":[
@@ -598,7 +452,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"脏矩形调试显示",
+            "text":"Dirty Rectangle",
 			"rect":"true"
          },
          {
@@ -608,7 +462,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"基本FPS监视器",
+            "text":"FPS",
 			"fps":"true"
          },
          {
@@ -618,13 +472,13 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"屏幕调试日志",
+            "text":"Log",
 			"log":"true"
          }
       ],
       "isFolder":true,
-      "text":"调试功能",
-      "tooltip":"调试功能"
+      "text":"Debug",
+      "tooltip":"Debug"
    },
    {
       "children":[
@@ -636,12 +490,12 @@
             "run":"true",
             "log":"true",
             "backgroundColor":"bai",
-            "text":"帧动画"
+            "text":"MovieClip"
          }
       ],
       "isFolder":true,
-      "text":"帧动画显示",
-      "tooltip":"帧动画显示"
+      "text":"MovieClip",
+      "tooltip":"MovieClip"
    },
    {
       "children":[
@@ -652,7 +506,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"字体加粗"
+            "text":"Bold"
          },
          {
             "filename":"110-text-color",
@@ -661,7 +515,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"字体颜色"
+            "text":"Color"
          },
          {
             "filename":"110-text-href",
@@ -671,7 +525,7 @@
             "run":"true",
             "log":"true",
             "backgroundColor":"hui",
-            "text":"字体超链接"
+            "text":"Link"
          },
          {
             "filename":"110-text-itatic",
@@ -680,7 +534,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"字体倾斜"
+            "text":"Italic"
          },
          {
             "filename":"110-text-layout",
@@ -689,7 +543,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"文本布局"
+            "text":"Layout"
          },
          {
             "filename":"110-text-size",
@@ -698,7 +552,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"字体大小"
+            "text":"Size"
          },
          {
             "filename":"110-text-stroke",
@@ -707,7 +561,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"文本描边"
+            "text":"Stroke"
          },
          {
             "filename":"110-text-text-flow-1",
@@ -716,7 +570,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"富文本（标准格式）"
+            "text":"TextFlow"
          },
          {
             "filename":"110-text-text-flow-2",
@@ -725,7 +579,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"富文本（xml格式）"
+            "text":"TextFlow with  XML"
          },
          {
             "filename":"110-text-input",
@@ -734,12 +588,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"输入文本"
+            "text":"InputText"
          }
       ],
       "isFolder":true,
-      "text":"文本显示",
-      "tooltip":"文本显示"
+      "text":"Text",
+      "tooltip":"Text"
    },
    {
       "children":[
@@ -750,7 +604,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"声音播放"
+            "text":"Audio"
          },
          {
             "filename":"120-media-video",
@@ -759,12 +613,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"视频播放"
+            "text":"Video"
          }
       ],
       "isFolder":true,
-      "text":"媒体播放",
-      "tooltip":"媒体播放"
+      "text":"Media",
+      "tooltip":"Media"
    },
    {
       "children":[
@@ -775,7 +629,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"RES组动态加载"
+            "text":"Load Group"
          },
          {
             "filename":"130-res-get-res-by-url",
@@ -784,7 +638,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"RES动态加载"
+            "text":"Load Assest"
          },
          {
             "filename":"130-res-group-preload",
@@ -793,12 +647,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"RES组预加载"
+            "text":"Preoad Group"
          }
       ],
       "isFolder":true,
-      "text":"RES资源管理",
-      "tooltip":"RES资源管理"
+      "text":"Resource Manage",
+      "tooltip":"Resource Manage"
    },
    {
       "children":[
@@ -809,7 +663,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"不明物体"
+            "text":"Demo"
          },
          {
             "filename":"150-particle-2",
@@ -817,7 +671,7 @@
             "zip":"150-particle-2.zip",
             "des":"README.md",
             "run":"true",
-            "text":"摇钱树"
+            "text":"Flutter"
          },
          {
             "filename":"150-particle-3",
@@ -826,12 +680,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"篝火"
+            "text":"Fire"
          }
       ],
       "isFolder":true,
-      "text":"粒子",
-      "tooltip":"粒子"
+      "text":"Particle",
+      "tooltip":"Particle"
    },
    {
       "children":[
@@ -841,7 +695,7 @@
             "zip":"160-db-basic.zip",
             "des":"README.md",
             "run":"true",
-            "text":"基本动画",
+            "text":"Base Animation",
             "backgroundColor":"bai"
          },
          {
@@ -850,7 +704,7 @@
             "zip":"160-db-change-disp.zip",
             "des":"README.md",
             "run":"true",
-            "text":"换装动画",
+            "text":"Avatar",
             "backgroundColor":"hui"
          },
          {
@@ -859,7 +713,7 @@
             "zip":"160-db-dynamic.zip",
             "des":"README.md",
             "run":"true",
-            "text":"骨骼动画实时生成",
+            "text":"Ceate Animation",
             "backgroundColor":"bai"
          },
          {
@@ -868,7 +722,7 @@
             "zip":"160-db-ik.zip",
             "des":"README.md",
             "run":"true",
-            "text":"IK骨骼约束",
+            "text":"IK",
             "backgroundColor":"bai"
          },
          {
@@ -877,13 +731,13 @@
             "zip":"160-db-mech.zip",
             "des":"README.md",
             "run":"true",
-            "text":"机甲战士",
+            "text":"Mecha",
             "backgroundColor":"hui"
          }
       ],
       "isFolder":true,
-      "text":"骨骼动画",
-      "tooltip":"骨骼动画"
+      "text":"DragonBones",
+      "tooltip":"DragonBones"
    },
    {
       "children":[
@@ -894,7 +748,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"显示文本"
+            "text":"Text"
          },
 		 {
             "filename":"170-eui-input",
@@ -903,7 +757,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"输入文本"
+            "text":"InputText"
          },
 		 {
             "filename":"170-eui-image",
@@ -912,7 +766,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"图片"
+            "text":"Image"
          },
          {
             "filename":"170-eui-button",
@@ -921,7 +775,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"按钮"
+            "text":"Button"
          },
 		{
             "filename":"170-eui-toggle-button",
@@ -930,7 +784,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"状态切换按钮"
+            "text":"ToggleButton"
          },
 	    {
             "filename":"170-eui-radiobutton",
@@ -939,7 +793,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"单选按钮"
+            "text":"RadioButton"
          },
          {
             "filename":"170-eui-checkbox",
@@ -948,7 +802,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"复选框"
+            "text":"CheckBox"
          },
          {
             "filename":"170-eui-hslider-vslider",
@@ -957,7 +811,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"滑动选择器"
+            "text":"Slider"
          },
          {
             "inmenu":false,
@@ -967,7 +821,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"进度条"
+            "text":"Bar"
          },
          {
             "filename":"175-eui-list",
@@ -976,7 +830,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"列表"
+            "text":"List"
          },
          {
             "filename":"175-eui-panel",
@@ -985,7 +839,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"对话框"
+            "text":"Panel"
          },
          {
             "filename":"175-eui-tabbar",
@@ -994,12 +848,12 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"选项卡"
+            "text":"Tab"
          }
       ],
       "isFolder":true,
-      "text":"EUI基础控件",
-      "tooltip":"EUI基础控件"
+      "text":"EUI Control",
+      "tooltip":"EUI Control"
    },
    {
       "children":[
@@ -1010,7 +864,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"基本布局"
+            "text":"Base Layout"
          },
          {
             "filename":"180-eui-adv-horiz-layout",
@@ -1019,7 +873,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"水平布局"
+            "text":"Horizontal"
          },
          {
             "filename":"180-eui-adv-vertical-layout",
@@ -1028,7 +882,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"垂直布局"
+            "text":"Vertical"
          },
          {
             "filename":"180-eui-adv-tile-layout",
@@ -1037,7 +891,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"网格布局"
+            "text":"Grid"
          },
          {
             "filename":"180-eui-adv-extend-layout",
@@ -1046,7 +900,7 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"bai",
-            "text":"自定义布局"
+            "text":"Custom Layout"
          },
          {
             "filename":"180-eui-adv-item-renderer",
@@ -1055,93 +909,32 @@
             "des":"README.md",
             "run":"true",
             "backgroundColor":"hui",
-            "text":"自定义项呈示器"
+            "text":"Custom Item"
          }
       ],
       "isFolder":true,
-      "text":"EUI布局及高级显示",
-      "tooltip":"EUI布局及高级显示"
+      "text":"EUI Layout",
+      "tooltip":"EUI Layout"
    }
 ]
-</div>
-					<div id="searchResult"></div>
-				</div>
-				<div id="playground-host" class="col-sm-8">
-						<div class="demo-info-2d">
-							<span id="exampleTitle"></span>
-							<span class="btn-blue pull-right" id="down">下载</span>
-							<span class="btn-blue pull-right" id="execute">运行</span>
-							<span class="btn-blue pull-right" id="reset">重置</span>
-						</div>
-						<div id="wrapper">
-							<div id="typescriptEditor" style=" margin-top: 10px ;border: 1px solid #e1e1e1;" data-keybinding-context="1" data-mode-id="typescript"></div>
-							<button id="screen" class="btn-success" style="display:none;">||</button>
-						</div>
-
-						<div class="classmenu" style="display:none;">
-							<!--<spna id="exampleTitle">最基本的显示</spna>-->
-							 <a id="exampleDes"  title="示例介绍"   href="#" ><img src="/cn/data/upload/simpleboot/example/des.png" /></a>
-						</div>
-
-						<button id="execute" class="btn btn-success" style="position: absolute;top: 0px;right: 212px;display:none;">运行</button>
-						<button id="reset" class="btn btn-success" style="position: absolute;top: 0px;right: 105px;display:none;">重置</button>
-						<!--<button id="down" class="btn btn-success" style="position: absolute;top: 0px;right: 0px;display:none;">下载</button>-->
-				</div>
-				<div class="col-sm-4" >
-					<div style="text-align: center;" class="demo-info-2d">
-						<a class="btn-qrcode" id="erweima" style="background-image:url(/cn/data/upload//simpleboot/example/qr.svg);">
-							二维码
-						</a>
-					</div>
-					<div id="playground-result">
-						<div class="coderesult">
-							<p class="poptitle">白鹭引擎教学示例</p>
-							<iframe id="popiframe" allowfullscreen="true"  src="">
-							</iframe>
-							<div class="qrpopmodule">
-								<div id="qrcode" class="center-block">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		<script type="text/javascript">
+</div> <div id="searchResult"></div> </div> <div id="playground-host" class="col-sm-8"> <div class="demo-info-2d"> <span id="exampleTitle"></span> <span class="btn-blue pull-right" id="down">Download</span> <span class="btn-blue pull-right" id="execute">Run</span> <span class="btn-blue pull-right" id="reset">Reset</span> </div> <div id="wrapper"> <div id="typescriptEditor" style=" margin-top: 10px ;border: 1px solid #e1e1e1;" data-keybinding-context="1" data-mode-id="typescript"></div> <button id="screen" class="btn-success" style="display:none;">||</button> </div> <div class="classmenu" style="display:none;"> <!--<spna id="exampleTitle">最基本的显示</spna>--> <a id="exampleDes"  title="示例介绍"   href="#" ><img src="http://cdn.dev.egret.com/simpleboot/example/des.png" /></a> </div> <button id="execute" class="btn btn-success" style="position: absolute;top: 0px;right: 212px;display:none;">Run</button> <button id="reset" class="btn btn-success" style="position: absolute;top: 0px;right: 105px;display:none;">Reset</button> <!--<button id="down" class="btn btn-success" style="position: absolute;top: 0px;right: 0px;display:none;">下载</button>--> </div> <div class="col-sm-4" > <div style="text-align: center;" class="demo-info-2d"> <a class="btn-qrcode" id="erweima" style="background-image:url(http://cdn.dev.egret.com//simpleboot/example/qr.svg);">
+							QRCode
+						</a> </div> <div id="playground-result"> <div class="coderesult"> <p class="poptitle">白鹭引擎教学示例</p> <iframe id="popiframe" allowfullscreen="true"  src=""> </iframe> <div class="qrpopmodule"> <div id="qrcode" class="center-block"> </div> </div> </div> </div> </div> </div> <script type="text/javascript">
 //全局变量
     var GV = {
-        DIMAUB: "/cn/",
+        DIMAUB: "/en/",
         JS_ROOT: "statics/js/",
         TOKEN: ""
     };
-</script>
-<!-- Le javascript
-    ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<!-- change to bootstrap3 -->
-<script src="/cn/statics/js/jquery.min.js"></script>
-<script src="/cn/statics/js/jquery-migrate.min.js"></script>
-<script src="/cn/statics/js/wind.min.js"></script>
-<!-- change to  bootstrap3 -->
-<script src="/cn/statics/simpleboot/bootstrap3/js/bootstrap.min.js"></script>
-<script src="/cn/statics/js/frontend.min.js?v=20160229"></script>
-<script>
+</script> <!-- Le javascript
+    ================================================== --> <!-- Placed at the end of the document so the pages load faster --> <!-- change to bootstrap3 --> <script src="/en/statics/js/jquery.min.js"></script> <script src="/en/statics/js/jquery-migrate.min.js"></script> <script src="/en/statics/js/wind.min.js"></script> <!-- change to  bootstrap3 --> <script src="/en/statics/simpleboot/bootstrap3/js/bootstrap.min.js"></script> <script src="/en/statics/js/frontend.min.js?v=20160229"></script> <script>
     (function(){
         $("#menu-item-5").removeClass("productBox");
         $("#menu-item-5").removeClass("dropdown");
         $("#menu-item-5").addClass("expBox");  
         $("#menu-item-5").addClass("dropdown");
     })();
-</script>
-<script src="/cn/tpl/simplebootx/Public/js/nav.min.js?v=20160823"></script>
-<div style="position: absolute;top:80px;right:20px;width: 220px;line-height: 30px;">
-    <a style="color:#ffffff;" href="https://egret.com/products" target="_blank"><span style="font-size:16px;font-weight:500;">官方教程文档位置调整通知</span><br/>官方软件产品的使用手册、API文档、视频教程等资料已调整至对应的产品页面，开发者朋友可点击登陆所需的产品页面查找，给您带来的不便非常抱歉，谢谢！</a>
-</div>
-
-
-
-
-<script>
+</script> <script src="/en/tpl/simplebootx/Public/js/nav.min.js?v=20160823"></script> <script>
     $(function () {
         $('body').on('touchstart.dropdown', '.dropdown-menu', function (e) {
             e.stopPropagation();
@@ -1182,23 +975,22 @@
 function setNavLogo(){
     if(document.body.clientWidth>1270)
     {
-        $("#navlogo").attr("src", "/cn/tpl/simplebootx/Public/images/logo.png");
+        $("#navlogo").attr("src", "/en/tpl/simplebootx/Public/images/logo.png");
     }else{
-        $("#navlogo").attr("src", "/cn/tpl/simplebootx/Public/images/logo.png");
+        $("#navlogo").attr("src", "/en/tpl/simplebootx/Public/images/logo.png");
     }
 }
 
 function getLoginInfo(){
-	var data = {status: 0}
-    // $.post("/cn/user/index/is_login", {}, function (data) {
+    $.post("/en/user/index/is_login", {}, function (data) {
         if (data.status == 1)
         {
             
-            $("#edn_user_synlogin").attr("src","/cn/user/login/edn_user_synlogin");
+            $("#edn_user_synlogin").attr("src","/en/user/login/edn_user_synlogin");
             $("#main-menu-user-headicon").attr("src", "http://bbs.egret.com/uc_server/avatar.php?uid=" + data.user.avatar + "&size=middle");
             $("#main-menu-user-nicename").text(data.user.user_nicename != "" ? data.user.user_nicename : data.user.user_login);
             if(data.user.user_type==1)
-                $("#menu-user-info .subnav-login-out").prepend("<li class='logintOutBox'><a href=\"/cn/admin/index\"><i class='fa fa-user'></i> &nbsp;后台管理</a></li>");
+                $("#menu-user-info .subnav-login-out").prepend("<li class='logintOutBox'><a href=\"/en/admin/index\"><i class='fa fa-user'></i> &nbsp;后台管理</a></li>");
             $("#menu-user-login").hide();
             $("#menu-user-info").show();
 
@@ -1208,7 +1000,7 @@ function getLoginInfo(){
             $("#menu-user-login").show();
         }
 
-    // });
+    });
 }
 
 function checkLogin(){
@@ -1229,10 +1021,10 @@ $(window).ready(function(){
 
 ;(function() {
     "use strict";
-    //var index=window.location.href.indexOf("/cn/");
+    //var index=window.location.href.indexOf("/en/");
     //var mode=window.location.href.substr(index);
     //$("#main-menu").find("[href='"+mode+"']").attr("style","color:#FFFFFF");
-    if(window.location.href.indexOf("/cn/page/index/id/8")>0)
+    if(window.location.href.indexOf("/en/page/index/id/8")>0)
     {
         $("#menu-item-2 a").attr("style","color:#1dafec");
     }
@@ -1252,7 +1044,7 @@ $(window).ready(function(){
     {
         $("#menu-item-6 a").attr("style","color:#1dafec");
     }
-    else if(window.location.href.indexOf("/cn/page/index/id/54")>0)
+    else if(window.location.href.indexOf("/en/page/index/id/54")>0)
     {
         $("#menu-item-8 a").attr("style","color:#1dafec");
     }
@@ -1273,9 +1065,7 @@ $(window).ready(function(){
 
 setNavLogo();
 
-</script>
-
-<script>
+</script> <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -1283,33 +1073,14 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script>
-
-
-		<!-- Placed at the end of the document so the pages load faster -->
-		<script>
+</script> <!-- Placed at the end of the document so the pages load faster --> <script>
 			var startTime = (new Date()).getTime();
 			var selectNode = null;
 			var exampleList = null;
-			var examplePath = "/cn/example/page/examples/1/";
+			var examplePath = "/en/example/page/examples/1/";
 			var examplerelease = "http://developer.egret.com";
-		</script>
-		<script type="text/javascript">
+		</script> <script type="text/javascript">
 			var require = {
-				baseUrl: '/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/'
+				baseUrl: '/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/'
 			};
-		</script>
-        <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-		<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/egret/js/popwin.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/js/qrcode.min.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/loader.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.nls.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.js?v=20160601"></script>
-		<script type="text/javascript" src="/cn/statics/js/easytree/jquery-ts.easytree.js"></script>
-		<script src="/cn/statics/js/easytree/extends/searchtree.js"></script>
-		<script type="text/javascript" src="/cn/tpl/simplebootx/Public/simpleboot/examples/vscode/js/typescript.js"></script>
-
-	</body>
-
-</html>
+		</script> <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/egret/js/popwin.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/js/qrcode.min.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/loader.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.nls.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/Script/vs/editor/editor.main.js?v=20160601"></script> <script type="text/javascript" src="/en/statics/js/easytree/jquery-ts.easytree.js"></script> <script src="/en/statics/js/easytree/extends/searchtree.js"></script> <script type="text/javascript" src="/en/tpl/simplebootx/Public/simpleboot/examples/vscode/js/typescript.js"></script> </body> </html>
